@@ -1,0 +1,146 @@
+<div class="compose">
+    <form>
+      <div class="input-item">
+        <label> Subject: </label>
+        <input type="text" name="subject" id="sub" />
+      </div>
+      <div class="inputitem">
+        <label> priority: </label>
+        <div class="radiobtn">
+          <input
+            type="radio"
+            id="vehicle1"
+            class="check"
+            name="priority"
+            value="1"
+          />
+          <label for="vehicle1"> 1</label>
+          <input
+            type="radio"
+            id="vehicle2"
+            class="check"
+            name="priority"
+            value="2"
+          />
+          <label for="vehicle2"> 2</label>
+          <input
+            type="radio"
+            id="vehicle3"
+            class="check"
+            name="priority"
+            value="3"
+          />
+          <label for="vehicle3"> 3</label>
+          <input
+            type="radio"
+            id="vehicle4"
+            class="check"
+            name="priority"
+            value="4"
+          />
+          <label for="vehicle4"> 4</label>
+          <input
+            type="radio"
+            id="vehicle5"
+            class="check"
+            name="priority"
+            value="5"
+          />
+          <label for="vehicle5"> 5</label>
+          <input
+            type="radio"
+            id="vehicle6"
+            class="check"
+            name="priority"
+            value="6"
+          />
+          <label for="vehicle6"> 6</label>
+          <input
+            type="radio"
+            id="vehicle7"
+            class="check"
+            name="priority"
+            value="7"
+          />
+          <label for="vehicle7"> 7</label>
+          <input
+            type="radio"
+            id="vehicle8"
+            class="check"
+            name="priority"
+            value="8"
+          />
+          <label for="vehicle8"> 8</label>
+          <input
+            type="radio"
+            id="vehicle9"
+            class="check"
+            name="priority"
+            value="9"
+          />
+          <label for="vehicle9"> 9</label>
+          <input
+            type="radio"
+            id="vehicle10"
+            class="check"
+            name="priority"
+            value="10"
+          />
+          <label for="vehicle10"> 10</label>
+        </div>
+      </div>
+      <div class="inputitem">
+        <label> recievers: </label>
+        <textarea id="recievertoadd"></textarea>
+        <input
+          type="button"
+          value="Add Recievers"
+          id="reciever"
+        />
+        <input
+          type="button"
+          value="Delete Recievers"
+          id="reciever"
+        />
+      </div>
+      <div class="container mt-4" id="app">
+        <table class="table table-dark table-hover" id="tab">
+          <thead>
+            <tr>
+              <th scope="col">recievers</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="k in recieversname" :key="k.page">
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="inputitem">
+        <label> body: </label>
+        <textarea id="body"></textarea>
+      </div>
+      <div class="inputitem">
+        <label class="file" >
+          Add Attachments
+          <input type="file" id="file" />
+        </label>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">attachments</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </form>
+
+    <input type="button" value="send" id="send"  />
+    <input type="button" value="draft" id="draft" />
+</div>
