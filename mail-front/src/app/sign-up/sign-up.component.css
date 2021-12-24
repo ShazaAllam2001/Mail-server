@@ -1,4 +1,4 @@
-.websiteTitle {
+.website-title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,13 +6,13 @@
   font-family: 'Lucida Handwriting', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
   font-size: 60px;
 }
-.websiteSubtitle {
+.website-subtitle {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 18px;
   color: #d3d3d3;
   padding-left: 90px;
 }
-.inputBox {
+.input-box {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -21,57 +21,19 @@
   background-color: white;
   border: 5px solid black;
 }
-.title {
+.sign-up-title {
   color: grey;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   margin-top: 25px;
 }
-.input {
+.input-section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   height: 180px;
 }
-.button {
+.sign-up {
   margin-bottom: 25px;
 }
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  background-color: white;
-  border: none;
-  border-bottom: 2px solid black;
-  width: 350px;
-  font-size: 20px;
-}
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
-  outline: none;
-  border-bottom: 2px solid #d3d3d3;
-}
-input[type="button"] {
-  background-color: black;
-  color: white;
-  border: none;
-  display: inline-block;
-  width: 350px;
-  height: 40px;
-  font-size: 18px;
-}
-input[type="button"]:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-input[type="button"]:active {
-  transform: translateY(1px);
-  outline: none;
-} 
-  
-  
- 
-  
-  
- 
- 
