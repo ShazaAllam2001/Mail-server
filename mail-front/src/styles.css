@@ -1,5 +1,10 @@
+:root {
+    --green: #006B38FF;
+    --focus: #E0E0E0;
+}
+
 body {
-    background-color: black;
+    background-color: var(--green);
 }
 
 .input-field {

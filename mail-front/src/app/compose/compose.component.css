@@ -1,5 +1,7 @@
 #compose {
   background-color: white;
+  border: 5px solid gray;
+  border-radius: 10px;
 }
 .input-item {
   display: flex;
@@ -11,31 +13,18 @@ label {
   font-family: Georgia, 'Times New Roman', Times, serif;
   padding: 5px 10px;
 }
-.input {
-  background-color: white;
-  width: 400px;
-  height: 28px;
-  margin: 10px;
-  padding-left: 8px;
-  border-radius: 6px;
-  font-size: 20px;
-  font-weight: bold;  
-}
-.input:focus {
-  background-color: #d3d3d3;
-  outline: none;
-}
 .btn {
   cursor: pointer;
-  background-color: black;
+  background-color: var(--green);
   color: white;
   border: none;
+  border-radius: 30px;
   display: inline-block;
   text-align: center;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 160px;
+  margin-left: 20px;
+  width: 175px;
   height: 35px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 18px;
 }
 .btn:hover {
@@ -44,6 +33,20 @@ label {
 .btn:active {
   transform: translateY(1px);
   outline: none;
+}
+.input-check {
+  display: flex;
+  align-items: center;
+}
+.radio-btn {
+  padding: 0;
+  padding-right: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+.check {
+  height: 14px;
+  width: 14px;
 }
 .input-body {
   display: flex;
@@ -61,70 +64,51 @@ textarea {
   font-size: 18px;
 }
 textarea:focus {
-  background-color: #d3d3d3;
+  background-color: var(--focus);
   outline: none;
 }
 input[type="file"] {
   display: none;
 }
-
-/*#add-reciever, #delete-reciever {
-  border-radius: 10px;
-  width: 200px;
+.file {
+  height: 25px;
+}
+.submit {
+  display: flex;
+  justify-content: flex-end;
+}
+#send, #draft {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 25px;
+  width: 120px;
+  margin-bottom: 15px;
+}
+#draft {
+  margin-left: 50px;
+  margin-right: 30px;
+}
+ 
+table {
   margin: 10px;
-  height: 40px;
-  font-size: 18px;
-}*/
-  .check {
-    height: 15px;
-    width: 15px;
-    border-radius: 20px;
-  }
-  .box {
-    width: 10px;
-    height: 10px;
-    padding-right: 10px;
-  }
-  .radiobtn {
-    margin-left: 5px;
-  }
-  
-  
-  
-  .file {
-    height: 25px;
-  }
-  
-  
-  #send {
-    margin-left: 120px;
-  }
-  #draft {
-    margin-left: 50px;
-  }
-  table {
-    border: 3px solid grey;
-    margin: 10px;
-    width: 500px;
-    height: 50px;
-  }
-  th {
-    background-color: black;
-    color: white;
-    font-size: 20px;
-    font-family: Georgia;
-  }
-  tr {
-    border: none;
-    border-bottom: 1px solid black;
-    height: 15px;
-  }
-  td {
-    background-color: white;
-    color: black;
-    font-size: large;
-    font-weight: bold;
-  }
-  #attachment {
-    width: auto;
-  }
+  width: 500px;
+  height: 50px;
+}
+th {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+td {
+  background-color: white;
+  color: black;
+  font-size: 20px;
+}
+td:hover {
+  background-color: whitesmoke;
+}
+tr {
+  border: none;
+  border-bottom: 1px solid black;
+  height: 15px;
+}

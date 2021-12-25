@@ -2,27 +2,27 @@
     <form>
       <div class="input-item">
         <label> Subject: </label>
-        <input type="text" name="subject" class="input" id="subject" />
+        <input type="text" name="subject" class="input-field" id="subject" />
       </div>
       <div class="input-item">
         <label> Recievers: </label>
-        <input type="text" name="reciever" class="input" id="reciever" />
+        <input type="text" name="reciever" class="input-field" id="reciever" />
         <input
           type="button"
           id="add-reciever"
           class="btn"
-          value="Add Recievers"
+          value="Add Reciever"
         />
         <input
           type="button"
           id="delete-reciever"
           class="btn"
-          value="Delete Recievers"
+          value="Delete Reciever"
         />
       </div>
       
       <div class="input-item">
-        <table id="tab">
+        <table>
           <thead>
             <tr>
               <th scope="col">Recievers</th>
@@ -38,7 +38,7 @@
 
       <div class="input-item">
         <label> Priority: </label>
-        <div class="radiobtn">
+        <div>
           <input
             type="radio"
             id="vehicle1"
@@ -46,7 +46,8 @@
             name="priority"
             value="1"
           />
-          <label for="vehicle1"> 1</label>
+          <label for="vehicle1" class="radio-btn"> 1 </label>
+
           <input
             type="radio"
             id="vehicle2"
@@ -54,7 +55,8 @@
             name="priority"
             value="2"
           />
-          <label for="vehicle2"> 2</label>
+          <label for="vehicle2" class="radio-btn"> 2 </label>
+
           <input
             type="radio"
             id="vehicle3"
@@ -62,7 +64,8 @@
             name="priority"
             value="3"
           />
-          <label for="vehicle3"> 3</label>
+          <label for="vehicle3" class="radio-btn"> 3 </label>
+
           <input
             type="radio"
             id="vehicle4"
@@ -70,7 +73,8 @@
             name="priority"
             value="4"
           />
-          <label for="vehicle4"> 4</label>
+          <label for="vehicle4" class="radio-btn"> 4 </label>
+
           <input
             type="radio"
             id="vehicle5"
@@ -78,7 +82,8 @@
             name="priority"
             value="5"
           />
-          <label for="vehicle5"> 5</label>
+          <label for="vehicle5" class="radio-btn"> 5 </label>
+
           <input
             type="radio"
             id="vehicle6"
@@ -86,7 +91,8 @@
             name="priority"
             value="6"
           />
-          <label for="vehicle6"> 6</label>
+          <label for="vehicle6" class="radio-btn"> 6 </label>
+
           <input
             type="radio"
             id="vehicle7"
@@ -94,7 +100,8 @@
             name="priority"
             value="7"
           />
-          <label for="vehicle7"> 7</label>
+          <label for="vehicle7" class="radio-btn"> 7 </label>
+
           <input
             type="radio"
             id="vehicle8"
@@ -102,7 +109,8 @@
             name="priority"
             value="8"
           />
-          <label for="vehicle8"> 8</label>
+          <label for="vehicle8" class="radio-btn"> 8 </label>
+
           <input
             type="radio"
             id="vehicle9"
@@ -110,7 +118,8 @@
             name="priority"
             value="9"
           />
-          <label for="vehicle9"> 9</label>
+          <label for="vehicle9" class="radio-btn"> 9 </label>
+
           <input
             type="radio"
             id="vehicle10"
@@ -118,7 +127,7 @@
             name="priority"
             value="10"
           />
-          <label for="vehicle10"> 10</label>
+          <label for="vehicle10" class="radio-btn"> 10 </label>
         </div>
       </div>
 
@@ -127,10 +136,6 @@
         <textarea id="body"></textarea>
       </div>
       <div class="input-item">
-        <label class="btn file">
-          Add Attachments
-          <input type="file" id="file" />
-        </label>
         <table>
           <thead>
             <tr>
@@ -143,9 +148,22 @@
             </tr>
           </tbody>
         </table>
+        <label class="btn file">
+          Add Attachment
+          <input type="file" id="add-file" />
+        </label>
+        <input
+          type="button"
+          id="delete-file"
+          class="btn"
+          value="Delete Attachment"
+        />
       </div>
     </form>
 
-    <input type="button" value="send" id="send"  />
-    <input type="button" value="draft" id="draft" />
+    <div class="submit">
+      <input type="button" class="block-button-dark" value="Send" id="send" />
+      <input type="button" class="block-button-dark" value="Draft" id="draft" />
+    </div>
+    
 </div>
