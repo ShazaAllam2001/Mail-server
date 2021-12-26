@@ -1,43 +1,43 @@
 <div id="mail">
     <div class="content">
-      <label> From: </label>
-      <label class="text email"></label>
+        <label> From: </label>
+        <label class="text email"></label>
     </div>
 
     <div class="content">
-      <label> To: </label>
-      <label class="text email"></label>
+        <label> To: </label>
+        <label class="text email"></label>
     </div>
 
     <div class="content">
-      <label> Subject: </label>
-      <label class="text"></label>
-      <label class="date"> Date: </label>
-      <label class="text"></label>
+        <label> Subject: </label>
+        <label class="text"></label>
+        <label class="date"> Date: </label>
+        <label class="text"></label>
     </div>
 
     <div class="content">
-      <label class="body"></label>
-      <table>
-        <thead>
-          <tr>
-            <th>
-             <input type="checkbox" />
-            </th>
-            <th>
-              Attachments
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="i in attachment" :key="i.page">
-            <td>
-             <input type="checkbox" :value="i" />
-            </td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+        <label class="body"></label>
+        <table class="attachment-table">
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" />
+                    </th>
+                    <th>
+                        Attachments
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="i in attachment" :key="i.page">
+                    <td>
+                        <input type="checkbox" :value="i" />
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
- </div>
+</div>

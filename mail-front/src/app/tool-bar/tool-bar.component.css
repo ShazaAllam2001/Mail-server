@@ -4,6 +4,8 @@
     align-items: center;
     background-color: white;
     height: 40px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
 }
 
 .user-folder {
@@ -69,7 +71,7 @@
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
+    background-color: rgb(211, 211, 211);
 }
 
 .dropdown:hover .dropdown-content {

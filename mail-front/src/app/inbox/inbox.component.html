@@ -1,146 +1,59 @@
 <div id="inbox">
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <div class="toolbar">
-      <button class="userfolder">
-        User Folders
-      </button>
-      <div class="dropdown">
-        <button class="dropbtn-sort">Sort</button>
-        <div class="dropdown-content">
-          <a href="#"
-            >sender decreasing</a
-          >
-          <a href="#"
-            >sender increasing</a
-          >
-          <a href="#" 
-            >reciever decreasing</a
-          >
-          <a href="#" 
-            >reciever increasing</a
-          >
-          <a href="#" 
-            >subject decreasing</a
-          >
-          <a href="#" 
-            >subject increasing</a
-          >
-          <a href="#" 
-            >importance decreasing</a
-          >
-          <a href="#"
-            >importance increasing</a
-          >
-          <a href="#" 
-            >body decreasing</a
-          >
-          <a href="#"
-            >body increasing</a
-          >
-          <a href="#" 
-            >date decreasing</a
-          >
-          <a href="#" 
-            >date increasing</a
-          >
-          <a href="#" 
-            >attachment decreasing</a
-          >
-          <a href="#"
-            >attachment increasing</a
-          >
-        </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn-filter">Filter</button>
-        <div class="dropdown-content">
-          <a href="#" >sender</a>
-          <a href="#" >reciever</a>
-          <a href="#" >subject</a>
-          <a href="#" >importance</a>
-        </div>
-      </div>
-      <input type="search" id="textinput1" placeholder="filter..." />
-      <br />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <app-tool-bar></app-tool-bar>
 
-      <div class="dropdown">
-        <button class="dropbtn-search">Search</button>
-        <div class="dropdown-content">
-          <a href="#">sender</a>
-          <a href="#">reciever</a>
-          <a href="#">subject</a>
-          <a href="#">importance</a>
-          <a href="#">date</a>
-          <a href="#">body</a>
-          <a href="#">attachment</a>
-        </div>
-      </div>
-      <input type="search" id="textinput2" placeholder="search..." /><br />
+    <div class="btn-group" role="group">
+        <button class="btn-light">
+          <i class="material-icons" style="background-color:#dcdcdc; color:black; font-size: 24px;">
+            west
+          </i>
+          Previous
+        </button>
+        <button class="btn-light">Delete</button>
+        <button class="btn-light">Cancel</button>
+        <button class="btn-light">
+          Next
+          <i class="material-icons" style="background-color:#dcdcdc; color:black">
+            east
+          </i>
+        </button>
     </div>
-    <div
-      class="btn-group"
-      role="group"
-      aria-label="Basic mixed styles example"
-      id="boot"
-    >
-      <button class="buttonlight-large">
-        <i class="material-icons" style="background-color:white; color:black">
-          west
-        </i>
-        previous
-      </button>
-      <button class="buttonlight-large">delete</button>
-      <button class="buttonlight-large">
-        cancel
-      </button>
-      <button class="buttonlight-large">
-        next
-        <i class="material-icons" style="background-color:white; color:black">
-          east
-        </i>
-      </button>
-    </div><br>
-    <div
-      class="btn-group"
-      role="group"
-      aria-label="Basic mixed styles example"
-      id="boot"
-    >
-      <button class="buttonlight-large" id="userfolder" >
-        move to user folder:
-      </button>
-      <input type="search" id="textinput3" placeholder="user folder name..." />
+
+    <div class="btn-group" role="group">
+        <button class="block-button-dark" style="width: 150px; height: 30px;">
+          move to folder:
+        </button>
+        <input type="search" class="input-field" id="folder" placeholder="folder name..." />
     </div>
-    <div class="container mt-4" id="app">
-      <table class="table table-dark table-hover" id="tab">
-        <thead>
-          <tr>
-            <th>
-              <label class="form-checkbox">
+
+    <div>
+        <table class="mail-table">
+            <thead>
+                <tr>
+                    <th>
+                        <label class="form-checkbox">
                 <input type="checkbox" v-model="selectAll"/>
                 <i class="form-icon"></i>
               </label>
-            </th>
-            <th scope="col">Subject</th>
-            <th scope="col">Sender</th>
-            <th scope="col">Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="i in users" :key="i.page">
-            <td>
-              <label class="form-checkbox">
-                <input type="checkbox" :value="i.date" v-model="selected" />
-              </label>
-            </td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+                    </th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Sender</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="i in users" :key="i.page">
+                    <td>
+                        <label class="form-checkbox">
+                          <input type="checkbox" :value="i.date" v-model="selected" />
+                        </label>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-  </div>
+
+</div>

@@ -9,6 +9,7 @@ import { ComposeComponent } from './compose/compose.component';
 import { MailComponent } from './mail/mail.component';
 import { InboxComponent } from './inbox/inbox.component';
 import { ToolBarComponent } from './tool-bar/tool-bar.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ToolBarComponent } from './tool-bar/tool-bar.component';
     ComposeComponent,
     MailComponent,
     InboxComponent,
-    ToolBarComponent
+    ToolBarComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
