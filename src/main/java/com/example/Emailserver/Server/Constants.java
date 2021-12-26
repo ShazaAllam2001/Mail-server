@@ -11,8 +11,8 @@ public  class Constants {
     public static final String BODY = "Body";
     public static final String DATE = "Date";
     public static final String PRIORITY = "Priority";
-    public static final String TRUE = "Primary";
-    public static final String FALSE = "Default";
+  //  public static final String TRUE = "Primary";
+   // public static final String FALSE = "Default";
 
 
     public static final String SENDER = "Sender";
@@ -23,6 +23,8 @@ public  class Constants {
     public static final String TRASH = "Trash";
     public static final String DRAFT = "Draft";
 
+
+    public static final String CONTACTS = "Contacts";
     public static final String ATTACHMENTS = "Attachments";
     public static final String ATTACHMENTS_SENT = "sent";
     public static final String ATTACHMENTS_INBOX = "Inbox";

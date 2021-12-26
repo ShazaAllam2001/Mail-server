@@ -36,6 +36,4 @@ public class SearchingContacts {
         }
         return contactsResults;
     }
-
-
 }
