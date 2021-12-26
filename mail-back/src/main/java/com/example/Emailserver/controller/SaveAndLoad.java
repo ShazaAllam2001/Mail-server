@@ -105,6 +105,29 @@ public class SaveAndLoad {
 		}
 	}
 
+//read contact from json
+	@SuppressWarnings("unchecked")
+	public ArrayList<Contact> readContactsFromJson(String Email) throws FileNotFoundException, IOException, ParseException {
+		JSONParser parser = new JSONParser();
+		Object obj ;
+		try {
+			obj = parser.parse(new FileReader(Constants.DATABASE_PATH+Email+"//"+Constants.CONTACTS+ Constants.INDEX_JSON_PATH));}
+		catch(Exception e) {return null;}
+		ArrayList<Contact> usersArrayList=new ArrayList<Contact>();
+
+		JSONArray Contacts = (JSONArray) obj;
+		for(int i=0;i<Contacts.size();i++) {
+			JSONObject objects = (JSONObject) Contacts.get(i);
+
+			String Contact=(String) objects.get(Constants.CONTACTS);
+			Gson gson=new Gson();
+			Contact json= gson.fromJson(Contact,Contact.class);
+
+			usersArrayList.add(json);
+		}
+		return usersArrayList;
+	}
+
 	public int getMessageID(String Email,String folder) throws FileNotFoundException, IOException, ParseException {
 		ArrayList<MessageCreator> folderMessage = readMessages(Email,folder);
 		if(folderMessage==null) {
@@ -113,6 +136,25 @@ public class SaveAndLoad {
 			MessageCreator lastMessage=folderMessage.get(folderMessage.size()-1);
 			return (lastMessage.getID())+1;
 		}
+	}
+
+	public void makeFirstDirectory() throws IOException {
+		File file9 = new File(Constants.DATABASE_PATH);
+		file9.mkdir();
+		File file10 = new File(Constants.ACCOUNTS_PATH  );
+		file10.mkdir();//make accounts folder
+
+		File indexFileDraft = new File(Constants.ACCOUNTS_JSON_PATH );
+		indexFileDraft.createNewFile();
+	}
+
+	public void ClearFileContent(String mail,String type) throws IOException, ParseException {
+		JSONArray  arrayOfSent;
+		arrayOfSent=new JSONArray();
+		FileWriter fileWriter=new FileWriter(Constants.DATABASE_PATH +mail+"//"+type+ Constants.INDEX_JSON_PATH);
+		fileWriter.write("");///clear the file
+		fileWriter.flush();
+		fileWriter.close();//close file
 	}
 
 }

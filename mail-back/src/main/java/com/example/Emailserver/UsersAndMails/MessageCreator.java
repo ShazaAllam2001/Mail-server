@@ -75,7 +75,7 @@ public class MessageCreator {
     }
     public Message buildSentMessage() {
         messageSent= factory.getMessage(Constants.SENT,header,body,attaches,time,ID,priority);
-        return  messageSent;
+        return messageSent;
     }
 
     public Message buildInboxMessage() {
