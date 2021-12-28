@@ -86,7 +86,30 @@ public class Controller {
         catch (Exception ignored) {}
     }
 
+    @GetMapping("/sort")
+    public ArrayList<Message> sort(@RequestParam(name ="inboxOrSent") String inboxOrSent){
+        ArrayList<Message> list = new ArrayList<>();
+        ArrayList<? extends Message> primary = server.Filter(Constants.TRUE ,Constants.PRIORITY , inboxOrSent);
+        ArrayList<? extends Message> defaultList = server.Filter(Constants.FALSE , Constants.PRIORITY , inboxOrSent);
+        if(primary != null)
+            list.addAll(primary);
+        if(defaultList != null)
+            list.addAll(defaultList);
 
+        return list.isEmpty() ? null : list;
+    }
+
+
+    @GetMapping("/filter")
+    public ArrayList<? extends Message> filterBy(@RequestParam(name = "filterName")String Name ,
+                                                 @RequestParam(name = "filterBy") String filterBY ,
+                                                 @RequestParam(name = "place") String place){
+
+        return server.Filter(Name, filterBY, place);
+    }
+
+
+    
     //@GetMapping("/addContact")
 
 

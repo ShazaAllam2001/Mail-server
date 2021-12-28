@@ -12,7 +12,9 @@ public class MessageCreator {
     private Message messageInbox;
     private Message messageDraft;
     private Message messageTrash;
+    //default
     private boolean priority=false;
+
     private MessageFactory factory= new MessageFactory();
 
     public MessageCreator( MessageHeader header, MessageBody body,Attachments attaches, String time,int ID,boolean priority) {
@@ -30,18 +32,21 @@ public class MessageCreator {
     public void setBody(MessageBody body) {
         this.body = body;
     }
+
     public MessageHeader getHeader() {
         return header;
     }
     public void setHeader(MessageHeader header) {
         this.header = header;
     }
+
     public Attachments getAttaches() {
         return attaches;
     }
     public void setAttaches(Attachments attaches) {
         this.attaches = attaches;
     }
+
     public Message getMessage() {
         return messageSent;
     }
@@ -52,7 +57,6 @@ public class MessageCreator {
     public boolean isPriority() {
         return priority;
     }
-
     public void setPriority(boolean priority) {
         this.priority = priority;
     }
@@ -60,19 +64,17 @@ public class MessageCreator {
     public int getID() {
         return ID;
     }
-
     public void setID(int iD) {
         ID = iD;
     }
 
-
     public String getTime() {
         return time;
     }
-
     public void setTime(String time) {
         this.time = time;
     }
+
     public Message buildSentMessage() {
         messageSent= factory.getMessage(Constants.SENT,header,body,attaches,time,ID,priority);
         return messageSent;
@@ -80,18 +82,17 @@ public class MessageCreator {
 
     public Message buildInboxMessage() {
         messageInbox= factory.getMessage(Constants.INBOX,header,body,attaches,time,ID,priority);
-        return  messageInbox;
+        return messageInbox;
     }
 
     public Message buildDraftMessage() {
         messageDraft= factory.getMessage(Constants.DRAFT,header,body,attaches,time,ID,priority);
-        return  messageDraft;
+        return messageDraft;
     }
-    
 
     public Message builTrashMessage() {
         messageTrash= factory.getMessage(Constants.TRASH,header,body,attaches,time,ID,priority);
-        return  messageTrash;
+        return messageTrash;
     }
 
  //   @Override

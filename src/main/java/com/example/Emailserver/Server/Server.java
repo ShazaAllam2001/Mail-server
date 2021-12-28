@@ -118,13 +118,13 @@ public class Server {
             saveAndLoad.sendMessage(myMessage, Constants.SENT, myMessage.getHeader().getSender());
 
             for (int i = 0; i < reciver.size(); i++) {
-                attachementsDealing=saveMultipartFile(attaches,myMessage.getHeader().getReciever().get(i),
-                        Constants.ATTACHMENTS_INBOX,saveAndLoad.getMessageID(myMessage.getHeader().getReciever().get(i), Constants.INBOX));
+                attachementsDealing=saveMultipartFile(attaches,myMessage.getHeader().getReceiver().get(i),
+                        Constants.ATTACHMENTS_INBOX,saveAndLoad.getMessageID(myMessage.getHeader().getReceiver().get(i), Constants.INBOX));
                 Attaches = new Attachments(attachementsDealing);
                 header = new MessageHeader(user.getEmail(),reciver,subject,Constants.INBOX,priority);
                 myMessage = new MessageCreator(header,Body,Attaches,dtf.format(now).toString().toString(),
-                        saveAndLoad.getMessageID(myMessage.getHeader().getReciever().get(i), Constants.INBOX),priority);
-                saveAndLoad.sendMessage(myMessage, Constants.INBOX, myMessage.getHeader().getReciever().get(i));
+                        saveAndLoad.getMessageID(myMessage.getHeader().getReceiver().get(i), Constants.INBOX),priority);
+                saveAndLoad.sendMessage(myMessage, Constants.INBOX, myMessage.getHeader().getReceiver().get(i));
             }
         }
 
@@ -235,4 +235,58 @@ public class Server {
     public String getUserName(){
         return user.getUserName();
     }
+
+
+
+
+    public ArrayList<? extends Message> Filter (String  filterName , String filterBy , String place ){
+        ArrayList<? extends Message> result =new ArrayList<>() ;
+        switch (filterBy){
+            case Constants.SUBJECT:
+                Criteria subjectFilter = new SubjectCriteria(filterName);
+                result = getMessages(place, result, subjectFilter);
+
+                break;
+            case Constants.RECEIVERS:
+                Criteria reciverFilter = new receiversCriteria(filterName);
+                result = getMessages(place, result, reciverFilter);
+                break;
+            case Constants.BODY:
+                Criteria bodyFilter = new BodyCriteria(filterName);
+                result = getMessages(place, result, bodyFilter);
+                break;
+            case Constants.DATE:
+                Criteria dateFilter = new DateCriteria(filterName);
+                result = getMessages(place, result, dateFilter);
+                break;
+            case Constants.PRIORITY:
+                boolean check;
+                check= filterName.equals(Constants.TRUE);
+                Criteria PriorityCriteria = new PriorityCriteria(check);
+                result = getMessages(place, result, PriorityCriteria);
+                break;
+        }
+
+        return result;
+    }
+
+    private ArrayList<? extends Message> getMessages(String subjectOrReceiversOrBodyOrDateOrPriority, ArrayList<? extends Message> result, Criteria subjectFilter) {
+        switch (subjectOrReceiversOrBodyOrDateOrPriority) {
+            case Constants.INBOX:
+                result = subjectFilter.filterCriteria(user.getInbox());
+                break;
+            case Constants.SENT:
+                result = subjectFilter.filterCriteria(user.getSentMessage());
+                break;
+            case Constants.TRASH:
+                result = subjectFilter.filterCriteria(user.getTrash());
+                break;
+            case Constants.DRAFT:
+                result = subjectFilter.filterCriteria(user.getDraft());
+                break;
+        }
+        return result;
+    }
+
+
 }

@@ -18,7 +18,7 @@ public class Message {
         this.time = time;
         this.priority = priority;
     }
-//////////////////getters and setters of the message
+
     public int getID() {
         return ID;
     }
@@ -41,16 +41,6 @@ public class Message {
 
     public void setPriority(boolean priority) {
         this.priority = priority;
-    }
-/////////////to string function ///////////
-    @Override
-    public String toString() {
-        final StringBuffer sb = new StringBuffer("Message{");
-        sb.append("ID=").append(ID);
-        sb.append(", body=").append(body);
-        sb.append(", header=").append(header);
-        sb.append('}');
-        return sb.toString();
     }
 
 
