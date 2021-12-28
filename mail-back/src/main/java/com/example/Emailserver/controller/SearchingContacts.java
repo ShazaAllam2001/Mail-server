@@ -1,6 +1,6 @@
 package com.example.Emailserver.controller;
 
-import com.example.Emailserver.UsersAndMails.Contact;
+import com.example.Emailserver.UsersAndMails.Contact.Contact;
 
 import java.util.ArrayList;
 

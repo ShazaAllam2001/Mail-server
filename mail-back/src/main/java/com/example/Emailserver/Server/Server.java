@@ -1,6 +1,13 @@
 package com.example.Emailserver.Server;
 
 import com.example.Emailserver.UsersAndMails.*;
+import com.example.Emailserver.UsersAndMails.Mail.Attachments;
+import com.example.Emailserver.UsersAndMails.Contact.Contact;
+import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Draft;
+import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Sent;
+import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Trash;
+import com.example.Emailserver.UsersAndMails.Mail.MessageHeader;
+import com.example.Emailserver.UsersAndMails.User.User;
 import com.example.Emailserver.controller.*;
 import com.example.Emailserver.library.doubleLinkedList;
 import org.json.simple.parser.ParseException;
@@ -15,7 +22,6 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
 import java.util.Locale;
 
@@ -59,7 +65,7 @@ public class Server {
         ArrayList<Contact> contact= save.readContactsFromJson(user.getEmail());
         if(Inbox!=null) {
             for (MessageCreator inbox : Inbox) {
-                user.addInboxMessage((Inbox) inbox.buildInboxMessage());}}
+                user.addInboxMessage((com.example.Emailserver.UsersAndMails.Mail.MailTypes.Inbox) inbox.buildInboxMessage());}}
 
         if(sent!=null) {
             for (MessageCreator messageCreator : sent) {

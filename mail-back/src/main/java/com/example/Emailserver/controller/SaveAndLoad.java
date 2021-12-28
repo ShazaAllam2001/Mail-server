@@ -3,9 +3,9 @@ package com.example.Emailserver.controller;
 import java.io.*;
 import java.util.ArrayList;
 
-import com.example.Emailserver.UsersAndMails.Contact;
+import com.example.Emailserver.UsersAndMails.Contact.Contact;
 import com.example.Emailserver.UsersAndMails.MessageCreator;
-import com.example.Emailserver.UsersAndMails.User;
+import com.example.Emailserver.UsersAndMails.User.User;
 import com.example.Emailserver.UsersAndMails.UserClass;
 import com.example.Emailserver.Server.Constants;
 import com.google.gson.Gson;

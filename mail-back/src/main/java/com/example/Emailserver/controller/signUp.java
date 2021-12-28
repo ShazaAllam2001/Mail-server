@@ -1,12 +1,8 @@
 package com.example.Emailserver.controller;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import com.example.Emailserver.UsersAndMails.User;
-import com.example.Emailserver.Server.Constants;
+
+import com.example.Emailserver.UsersAndMails.User.User;
 import org.json.simple.parser.ParseException;
 
 public class signUp {

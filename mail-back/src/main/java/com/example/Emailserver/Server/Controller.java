@@ -1,21 +1,10 @@
 package com.example.Emailserver.Server;
 
-import com.example.Emailserver.UsersAndMails.Contact;
-import com.example.Emailserver.UsersAndMails.Message;
-import com.example.Emailserver.UsersAndMails.MessageCreator;
-import com.example.Emailserver.UsersAndMails.UserClass;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.UrlResource;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import com.example.Emailserver.UsersAndMails.User.*;
 import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import javax.servlet.http.HttpServletRequest;
-import java.io.*;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;

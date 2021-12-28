@@ -4,12 +4,9 @@ import org.json.simple.parser.ParseException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.io.FileReader;
-import com.example.Emailserver.UsersAndMails.User;
+
+import com.example.Emailserver.UsersAndMails.User.User;
 import com.example.Emailserver.UsersAndMails.UserClass;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
 public class Proxy {
     private String Email, password;

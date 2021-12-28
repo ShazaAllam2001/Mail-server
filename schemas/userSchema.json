@@ -1,0 +1,59 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://github.com/ShazaAllam2001/Mail-server.git/schemas/userSchema.json",
+
+    "title": "User",
+    "description": "user information",
+    "type": "object",
+    "properties": {
+        "userName": {
+            "description": "The user name",
+            "type": "string"
+        },
+        "password": {
+            "description": "The user password",
+            "type": "string",
+            "minLength": 8
+        },
+        "email" : {
+            "description": "The user email",
+            "type": "string",
+            "format": "idn-email"
+        },
+        "sent": {
+            "description": "The user sent mails folder",
+            "type": "array",
+            "items": {
+                "$ref": "https://github.com/ShazaAllam2001/Mail-server.git/schemas/mailSchema.json"
+            },
+            "uniqueItems": true
+        },
+        "inbox": {
+            "description": "The user inbox mails folder",
+            "type": "array",
+            "items": {
+                "$ref": "https://github.com/ShazaAllam2001/Mail-server.git/schemas/mailSchema.json"
+            },
+            "uniqueItems": true
+        },
+        "draft": {
+            "description": "The user draft mails folder",
+            "type": "array",
+            "items": {
+                "$ref": "https://github.com/ShazaAllam2001/Mail-server.git/schemas/mailSchema.json"
+            },
+            "uniqueItems": true
+        },
+        "trash": {
+            "description": "The user trash mails folder",
+            "type": "array",
+            "items": {
+                "$ref": "https://github.com/ShazaAllam2001/Mail-server.git/schemas/mailSchema.json"
+            },
+            "uniqueItems": true
+        }
+    },
+    "required": ["name","password","email"],
+    "additionalProperties": false
+
+}

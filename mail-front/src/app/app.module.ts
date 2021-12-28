@@ -9,7 +9,8 @@ import { ComposeComponent } from './compose/compose.component';
 import { MailComponent } from './mail/mail.component';
 import { InboxComponent } from './inbox/inbox.component';
 import { ToolBarComponent } from './tool-bar/tool-bar.component';
-import { ContactComponent } from './contact/contact.component';
+import { FolderToolBarComponent } from './folder-tool-bar/folder-tool-bar.component';
+import { FolderComponent } from './folder/folder.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ContactComponent } from './contact/contact.component';
     MailComponent,
     InboxComponent,
     ToolBarComponent,
-    ContactComponent
+    FolderToolBarComponent,
+    FolderComponent
   ],
   imports: [
     BrowserModule,

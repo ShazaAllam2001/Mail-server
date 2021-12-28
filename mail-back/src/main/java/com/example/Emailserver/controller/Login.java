@@ -4,7 +4,7 @@ import org.json.simple.parser.ParseException;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import com.example.Emailserver.UsersAndMails.User;
+import com.example.Emailserver.UsersAndMails.User.User;
 
 public class Login {
 	private String password, Email;
