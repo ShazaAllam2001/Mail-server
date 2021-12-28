@@ -1,6 +1,6 @@
 package com.example.Emailserver.UsersAndMails.User;
 
-import com.example.Emailserver.UsersAndMails.Contact.Contact;
+import com.example.Emailserver.UsersAndMails.Contact.IContact;
 import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Draft;
 import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Inbox;
 import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Sent;
@@ -8,13 +8,12 @@ import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Trash;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class User implements IUser {
     private String userName;
     private String password;
     private final String email;
-    private List<Contact> contacts;
+    private List<IContact> contacts;
     private List<Sent> sent;
     private List<Inbox> inbox;
     private List<Draft> draft;
@@ -42,16 +41,16 @@ public class User implements IUser {
         return email;
     }
 
-    public List<Contact> getContacts() {
+    public List<IContact> getContacts() {
         return contacts;
     }
-    public void setContacts(List<Contact> contacts) { this.contacts = contacts; }
-    public void addContact(Contact contact){
+    public void setContacts(List<IContact> contacts) { this.contacts = contacts; }
+    public void addContact(IContact contact){
         if(contacts == null)
             contacts = new LinkedList<>();
         contacts.add(contact);
     }
-    public void removeContact(Contact contact){
+    public void removeContact(IContact contact){
         contacts.remove(contact);
     }
 
@@ -79,7 +78,7 @@ public class User implements IUser {
             inbox = new LinkedList<>();
         inbox.add(mail);
     }
-    public void removeInboxMessage(Inbox mail){
+    public void removeInboxMail(Inbox mail){
         inbox.remove(mail);
     }
 
@@ -89,12 +88,12 @@ public class User implements IUser {
     public void setDraft(List<Draft> draft) {
         this.draft = draft;
     }
-    public void addDraftMessage(Draft mail){
+    public void addDraftMail(Draft mail){
         if(draft == null)
             draft = new LinkedList<>();
         draft.add(mail);
     }
-    public void removeDraftMessage(Draft mail){
+    public void removeDraftMail(Draft mail){
         draft.remove(mail);
     }
 
@@ -104,12 +103,12 @@ public class User implements IUser {
     public void setTrash(List<Trash> trash) {
         this.trash = trash;
     }
-    public void addTrashMessage(Trash mail){
+    public void addTrashMail(Trash mail){
         if(trash == null)
             trash = new LinkedList<>();
         trash.add(mail);
     }
-    public void removeTrashMessage(Trash mail){
+    public void removeTrashMail(Trash mail){
         trash.remove(mail);
     }
 

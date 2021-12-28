@@ -8,7 +8,7 @@
     "properties": {
         "id": {
             "description": "The unique identifier for an email",
-            "type": "string",
+            "type": "integer",
             "minLength": 12,
             "maxLength": 12
         },
@@ -42,15 +42,9 @@
             "minimum": 1,
             "maximum": 10
         },
-        "path": {
-            "description": "The path for the email folder",
-            "type": "string",
-            "pattern": "^(.+)\/([^\/]+)$"
-        },
         "body": {
-            "description": "The path for the email body file",
-            "type": "string",
-            "pattern": "^(.+)\/([^\/]+)$"
+            "description": "The email body",
+            "type": "string"
         },
         "attachments": {
             "description": "The email attachments",
@@ -75,7 +69,7 @@
             "type": "boolean" 
         }
     },
-    "required": ["id","time","sender","receivers","priority","send"],
+    "required": ["id","time","sender","receivers","mutable"],
     "additionalProperties": false
 
 }

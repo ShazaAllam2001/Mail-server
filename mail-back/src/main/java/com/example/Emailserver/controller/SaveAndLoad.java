@@ -7,7 +7,7 @@ import com.example.Emailserver.UsersAndMails.Contact.Contact;
 import com.example.Emailserver.UsersAndMails.MessageCreator;
 import com.example.Emailserver.UsersAndMails.User.User;
 import com.example.Emailserver.UsersAndMails.UserClass;
-import com.example.Emailserver.Server.Constants;
+import com.example.Emailserver.Service.Constants;
 import com.google.gson.Gson;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -24,7 +24,7 @@ public class SaveAndLoad {
 		}catch(Exception e) {
 			return null;
 		}
-		ArrayList<UserClass> usersArrayList=new ArrayList<UserClass>();
+		ArrayList<User> usersArrayList = new ArrayList<>();
 		ArrayList<User> usersReadOnlyArrayList=new ArrayList<User>();
 		JSONArray employeeList = (JSONArray) obj;
 		for(int i=0;i<employeeList.size();i++) {
@@ -35,7 +35,6 @@ public class SaveAndLoad {
 			User userReadOnly = new UserClass(json.getUserName(),json.getPassword(),json.getEmail());
 			usersReadOnlyArrayList.add(userReadOnly);
 			usersArrayList.add(json);
-
 		}
 		return usersReadOnlyArrayList;
 	}

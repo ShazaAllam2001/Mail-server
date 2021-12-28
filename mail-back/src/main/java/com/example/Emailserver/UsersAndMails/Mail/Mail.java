@@ -6,9 +6,10 @@ import java.util.Date;
 import java.util.List;
 
 public abstract class Mail {
+    protected boolean mutable;
     protected int ID;
-    protected IUser sender;
-    protected List<IUser> receivers;
+    protected String sender;
+    protected List<String> receivers;
     protected String subject;
     protected Date time;
     protected Priority priority;
@@ -16,21 +17,21 @@ public abstract class Mail {
     protected String body;
     protected List<Attachment> attaches;
 
+    public boolean isMutable() { return mutable; }
     public int getID() { return ID; }
-    public abstract boolean setID(int ID);
 
     public String getPath() { return path; }
     public abstract boolean setPath(String path);
 
-    public IUser getSender() {
+    public String getSender() {
         return sender;
     }
-    public abstract boolean setSender(IUser sender);
+    public abstract boolean setSender(String sender);
 
-    public List<IUser> getReceivers() {
+    public List<String> getReceivers() {
         return receivers;
     }
-    public abstract boolean setReceivers(List<IUser> receivers);
+    public abstract boolean setReceivers(List<String> receivers);
 
     public String getSubject() {
         return subject;

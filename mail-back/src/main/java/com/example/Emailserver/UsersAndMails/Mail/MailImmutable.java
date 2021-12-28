@@ -1,21 +1,12 @@
 package com.example.Emailserver.UsersAndMails.Mail;
 
-import com.example.Emailserver.UsersAndMails.User.IUser;
-
 import java.util.Date;
 import java.util.List;
 
 public class MailImmutable extends Mail {
 
-    public MailImmutable() { }
-
-    @Override
-    public boolean setID(int ID) {
-        if(this.ID == 0) {
-            this.ID = ID;
-            return true;
-        }
-        return false;
+    public MailImmutable() {
+        this.mutable = false;
     }
 
     @Override
@@ -25,7 +16,7 @@ public class MailImmutable extends Mail {
     }
 
     @Override
-    public boolean setSender(IUser sender) {
+    public boolean setSender(String sender) {
         if(this.sender == null) {
             this.sender = sender;
             return true;
@@ -34,7 +25,7 @@ public class MailImmutable extends Mail {
     }
 
     @Override
-    public boolean setReceivers(List<IUser> receivers) {
+    public boolean setReceivers(List<String> receivers) {
         if(this.receivers == null) {
             this.receivers = receivers;
             return true;

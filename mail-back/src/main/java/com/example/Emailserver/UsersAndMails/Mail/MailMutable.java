@@ -6,13 +6,10 @@ import java.util.Date;
 import java.util.List;
 
 public class MailMutable extends Mail {
+    public final boolean mutable;
 
-    public MailMutable() { }
-
-    @Override
-    public boolean setID(int ID) {
-        this.ID = ID;
-        return true;
+    public MailMutable() {
+        this.mutable = true;
     }
 
     @Override
@@ -22,13 +19,13 @@ public class MailMutable extends Mail {
     }
 
     @Override
-    public boolean setSender(IUser sender) {
+    public boolean setSender(String sender) {
         this.sender = sender;
         return true;
     }
 
     @Override
-    public boolean setReceivers(List<IUser> receivers) {
+    public boolean setReceivers(List<String> receivers) {
         this.receivers = receivers;
         return true;
     }

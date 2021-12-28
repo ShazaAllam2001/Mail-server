@@ -15,40 +15,30 @@
             "type": "string",
             "minLength": 8
         },
-        "email" : {
+        "email": {
             "description": "The user email",
             "type": "string",
             "format": "idn-email"
         },
-        "sent": {
-            "description": "The user sent mails folder",
+        "contacts": {
+            "description": "The user contacts",
             "type": "array",
             "items": {
-                "$ref": "https://github.com/ShazaAllam2001/Mail-server.git/schemas/mailSchema.json"
-            },
-            "uniqueItems": true
-        },
-        "inbox": {
-            "description": "The user inbox mails folder",
-            "type": "array",
-            "items": {
-                "$ref": "https://github.com/ShazaAllam2001/Mail-server.git/schemas/mailSchema.json"
-            },
-            "uniqueItems": true
-        },
-        "draft": {
-            "description": "The user draft mails folder",
-            "type": "array",
-            "items": {
-                "$ref": "https://github.com/ShazaAllam2001/Mail-server.git/schemas/mailSchema.json"
-            },
-            "uniqueItems": true
-        },
-        "trash": {
-            "description": "The user trash mails folder",
-            "type": "array",
-            "items": {
-                "$ref": "https://github.com/ShazaAllam2001/Mail-server.git/schemas/mailSchema.json"
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "The contact name",
+                        "type": "string"
+                    },
+                    "emails": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "idn-email"
+                        },
+                        "uniqueItems": true
+                    }
+                }
             },
             "uniqueItems": true
         }

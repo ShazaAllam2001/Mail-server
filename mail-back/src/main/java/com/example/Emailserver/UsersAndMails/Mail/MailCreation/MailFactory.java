@@ -1,6 +1,6 @@
 package com.example.Emailserver.UsersAndMails.Mail.MailCreation;
 
-import com.example.Emailserver.Server.Constants;
+import com.example.Emailserver.Service.Constants;
 import com.example.Emailserver.UsersAndMails.Mail.Mail;
 import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Trash;
 import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Draft;

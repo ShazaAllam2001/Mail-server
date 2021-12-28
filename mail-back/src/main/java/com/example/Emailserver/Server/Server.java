@@ -1,12 +1,11 @@
 package com.example.Emailserver.Server;
 
-import com.example.Emailserver.UsersAndMails.*;
-import com.example.Emailserver.UsersAndMails.Mail.Attachments;
+import com.example.Emailserver.Service.Constants;
 import com.example.Emailserver.UsersAndMails.Contact.Contact;
 import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Draft;
 import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Sent;
 import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Trash;
-import com.example.Emailserver.UsersAndMails.Mail.MessageHeader;
+import com.example.Emailserver.UsersAndMails.User.IUser;
 import com.example.Emailserver.UsersAndMails.User.User;
 import com.example.Emailserver.controller.*;
 import com.example.Emailserver.library.doubleLinkedList;
@@ -26,27 +25,29 @@ import java.util.Date;
 import java.util.Locale;
 
 public class Server {
-    private UserClass user;
+    private IUser user;
     private final SaveAndLoad save = new SaveAndLoad();
     private static final Server server = new Server();
-    private Server(){}
+
+    private Server() { }
     public static Server getServer() {
         return server;
     }
 
     // log in
-    public boolean LOGIN(String Email,String password) throws  IOException, ParseException, java.text.ParseException {
+    public boolean logIn(String Email, String password) throws IOException, ParseException, java.text.ParseException {
         save.makeFirstDirectory();
         Login loginClass=new Login(Email,password);
-         User userInterface = loginClass.ExistOrNot();
+        IUser userInterface = loginClass.ExistOrNot();
 
-      // check user existence
+       // check user existence
         if(userInterface ==null) {
-            return false;}
-        else {
-            user=new UserClass(userInterface.getUserName(), userInterface.getPassword(), userInterface.getEmail());
+            return false;
+        } else {
+            user = new User(userInterface.getUserName(), userInterface.getPassword(), userInterface.getEmail());
             fillCurrentUser(user.getEmail());
-            AutoDelete();  return true;}
+            AutoDelete();  return true;
+        }
     }
 
     // sign up
@@ -58,7 +59,7 @@ public class Server {
     }
 
     public void fillCurrentUser(String Email ) throws  IOException, ParseException {
-        ArrayList<MessageCreator> sent= save.readMessages(Email,Constants.SENT);
+        ArrayList<MessageCreator> sent= save.readMessages(Email, Constants.SENT);
         ArrayList<MessageCreator> Inbox= save.readMessages(Email,Constants.INBOX);
         ArrayList<MessageCreator> draft= save.readMessages(Email,Constants.DRAFT);
         ArrayList<MessageCreator> trash= save.readMessages(Email,Constants.TRASH);

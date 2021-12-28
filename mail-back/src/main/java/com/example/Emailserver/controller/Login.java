@@ -18,6 +18,5 @@ public class Login {
 	public User ExistOrNot() throws FileNotFoundException, IOException, ParseException {
 		proxy=new Proxy(Email,password);
 		return proxy.logIn();
-
 	}
 }
