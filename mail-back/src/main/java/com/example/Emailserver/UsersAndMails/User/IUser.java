@@ -1,10 +1,7 @@
 package com.example.Emailserver.UsersAndMails.User;
 
 import com.example.Emailserver.UsersAndMails.Contact.IContact;
-import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Draft;
-import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Inbox;
-import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Sent;
-import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Trash;
+import com.example.Emailserver.UsersAndMails.Mail.Mail;
 
 import java.util.List;
 
@@ -23,24 +20,31 @@ public interface IUser {
 	public void addContact(IContact contact);
 	public void removeContact(IContact contact);
 
-	public List<Sent> getSent();
-	public void setSent(List<Sent> sent);
-	public void addSentMail(Sent mail);
-	public void removeSentMail(Sent mail);
+	public List<Mail> getSent();
+	public void setSent(List<Mail> sent);
+	public void addSentMail(Mail mail);
+	public void removeSentMail(Mail mail);
 
-	public List<Inbox> getInbox();
-	public void setInbox(List<Inbox> inbox);
-	public void addInboxMail(Inbox mail);
-	public void removeInboxMail(Inbox mail);
+	public List<Mail> getInbox();
+	public void setInbox(List<Mail> inbox);
+	public void addInboxMail(Mail mail);
+	public void removeInboxMail(Mail mail);
 
-	public List<Draft> getDraft();
-	public void setDraft(List<Draft> draft);
-	public void addDraftMail(Draft mail);
-	public void removeDraftMail(Draft mail);
+	public List<Mail> getDraft();
+	public void setDraft(List<Mail> draft);
+	public void addDraftMail(Mail mail);
+	public void removeDraftMail(Mail mail);
 
-	public List<Trash> getTrash();
-	public void setTrash(List<Trash> trash);
-	public void addTrashMail(Trash mail);
-	public void removeTrashMail(Trash mail);
+	public List<Mail> getTrash();
+	public void setTrash(List<Mail> trash);
+	public void addTrashMail(Mail mail);
+	public void removeTrashMail(Mail mail);
+
+	public void addFolder(String name);
+	public void removeFolder(String name);
+	public void renameFolder(String name, String newName);
+	public void addToFolder(String name, Mail mail);
+	public void removeFromFolder(String name, Mail mail);
+	public List<Mail> getFolderMails(String name);
 
 }

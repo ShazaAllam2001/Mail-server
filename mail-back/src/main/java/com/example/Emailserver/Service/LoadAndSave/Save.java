@@ -4,13 +4,10 @@ import com.example.Emailserver.Service.Constants;
 import com.example.Emailserver.UsersAndMails.Mail.Mail;
 import com.example.Emailserver.UsersAndMails.User.IUser;
 import org.everit.json.schema.Schema;
-import org.everit.json.schema.loader.SchemaLoader;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.simple.parser.JSONParser;
 
-import java.io.FileReader;
 import java.io.FileWriter;
 
 public class Save {

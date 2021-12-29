@@ -1,22 +1,19 @@
 package com.example.Emailserver.Controller;
 
-import org.json.simple.parser.ParseException;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import com.example.Emailserver.UsersAndMails.User.User;
+import com.example.Emailserver.UsersAndMails.User.IUser;
+import org.json.JSONException;
 
 public class Login {
 	private String password, Email;
 	private Proxy proxy;
 
 	public Login(String Email,String password) {
-		this.Email=Email;
-		this.password=password;
+		this.Email = Email;
+		this.password = password;
 	}
 
-	public User ExistOrNot() throws FileNotFoundException, IOException, ParseException {
-		proxy=new Proxy(Email,password);
+	public IUser ExistOrNot() throws JSONException {
+		proxy = new Proxy(Email,password);
 		return proxy.logIn();
 	}
 }

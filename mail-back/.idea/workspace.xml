@@ -4,42 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb537bf8-8a77-4f88-b7dd-6549c16bcc62" name="Changes" comment="add mails and users data model">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/Filter/Mail/SenderCriteria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/Filter/SearchContacts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/Sort/SortContacts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment4_Backend.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Server/MailserverApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/MailserverApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/CriteriaContact.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/CriteriaMail.java" beforeDir="false" />
+    <list default="true" id="cb537bf8-8a77-4f88-b7dd-6549c16bcc62" name="Changes" comment="add sorting and validation schema">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/Proxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/Proxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/SaveAndLoad.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/signUp.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/Load.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/Load.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/LoadAsJSONArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/LoadJSON.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/Save.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/convertToJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/convertToJSON.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/Search.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/SenderCriteria.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/Sorting.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/UsersAndMails/Mail/Mail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/UsersAndMails/Mail/Mail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/UsersAndMails/Mail/MailCreation/MailBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/UsersAndMails/Mail/MailCreation/MailBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/UsersAndMails/Mail/MailImmutable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/UsersAndMails/Mail/MailImmutable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/UsersAndMails/Mail/MailMutable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/UsersAndMails/Mail/MailMutable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/controller/Proxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/Proxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/controller/SaveAndLoad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/SaveAndLoad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/controller/SearchingContacts.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/controller/signUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/signUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/UsersAndMails/User/IUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/UsersAndMails/User/IUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/UsersAndMails/User/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/UsersAndMails/User/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +64,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="E:/College/Level 3/Fall (2021)/Algorithms/Programming assignments/Assignment_02" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../schemas/mailSchema.json" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RunManager">
@@ -135,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640698077524</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add sorting and validation schema">
+      <created>1640784859920</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1640784859921</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -152,6 +138,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add mails and users data model" />
-    <option name="LAST_COMMIT_MESSAGE" value="add mails and users data model" />
+    <MESSAGE value="add sorting" />
+    <MESSAGE value="add sorting and validation schema" />
+    <option name="LAST_COMMIT_MESSAGE" value="add sorting and validation schema" />
   </component>
 </project>

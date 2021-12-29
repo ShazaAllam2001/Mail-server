@@ -7,11 +7,14 @@ import java.util.List;
 import java.util.TimeZone;
 
 public class MailMutable extends Mail {
-    public final boolean mutable;
+    private boolean mutable;
 
     public MailMutable() {
         this.mutable = true;
     }
+
+    @Override
+    public boolean isMutable() { return mutable; }
 
     @Override
     public boolean setID() {

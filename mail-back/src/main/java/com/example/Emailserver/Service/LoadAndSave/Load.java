@@ -5,6 +5,10 @@ import com.example.Emailserver.UsersAndMails.Contact.IContact;
 import com.example.Emailserver.UsersAndMails.Mail.Attachment;
 import com.example.Emailserver.UsersAndMails.Mail.Mail;
 import com.example.Emailserver.UsersAndMails.Mail.MailCreation.MailBuilder;
+import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Draft;
+import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Inbox;
+import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Sent;
+import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Trash;
 import com.example.Emailserver.UsersAndMails.Mail.Priority;
 import com.example.Emailserver.UsersAndMails.User.IUser;
 import com.example.Emailserver.UsersAndMails.User.User;
@@ -15,6 +19,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.reflect.Type;
+import java.text.ParseException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -32,10 +37,16 @@ public class Load {
     public IUser loadUserData(String userEmail) throws JSONException {
         JSONObject user = getUser(userEmail);
         // convert json object to java object
-        IUser currentUser = new User(user.getString("userName"),
-                                     user.getString("password"),
-                                     user.getString("email"));
-        JSONArray contacts = user.getJSONArray("contacts");
+        IUser currentUser = JSONToUser(user);
+        return currentUser;
+    }
+
+    public IUser JSONToUser(JSONObject obj) throws JSONException {
+        // convert json object to java object
+        IUser currentUser = new User(obj.getString("userName"),
+                                     obj.getString("password"),
+                                     obj.getString("email"));
+        JSONArray contacts = obj.getJSONArray("contacts");
         currentUser.setContacts(gson.fromJson(contacts.toString(),contactType));
         return currentUser;
     }
@@ -65,20 +76,24 @@ public class Load {
         for(int i=0; i<mailsList.length(); i++) {
             try {
                 JSONObject obj = (JSONObject) mailsList.get(i);
-                // convert JSON object into java object
-                MailBuilder mailBuilder = new MailBuilder(folder);
-                mailBuilder.setSender(obj.getString("sender"))
-                           .setReceivers(gson.fromJson(obj.getJSONArray("receivers").toString(),contactType))
-                           .setSubject(obj.getString("subject"))
-                           .setTime(obj.getString("time"))
-                           .setPriority(Priority.values()[obj.getInt("priority")-1])
-                           .setBody(obj.getString("body"))
-                           .setAttaches(gson.fromJson(obj.getJSONArray("attachments").toString(),attachmentType));
-                mails.add(mailBuilder.getMail());
+                mails.add(JSONToMail(folder,obj));
             } catch(Exception e) {
                 e.printStackTrace();
             }
         }
         return null;
+    }
+
+    public Mail JSONToMail(String folder, JSONObject obj) throws JSONException, ParseException {
+        // convert JSON object into java object
+        MailBuilder mailBuilder = new MailBuilder(folder);
+        mailBuilder.setSender(obj.getString("sender"))
+                .setReceivers(gson.fromJson(obj.getJSONArray("receivers").toString(),contactType))
+                .setSubject(obj.getString("subject"))
+                .setTime(obj.getString("time"))
+                .setPriority(Priority.values()[obj.getInt("priority")-1])
+                .setBody(obj.getString("body"))
+                .setAttaches(gson.fromJson(obj.getJSONArray("attachments").toString(),attachmentType));
+        return mailBuilder.getMail();
     }
 }

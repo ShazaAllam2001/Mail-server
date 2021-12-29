@@ -18,9 +18,8 @@ public abstract class Mail {
     protected Priority priority;
     protected String body;
     protected List<Attachment> attaches;
-    protected boolean mutable;
 
-    public boolean isMutable() { return mutable; }
+    public abstract boolean isMutable();
 
     @Override
     public boolean equals(Object o) {
