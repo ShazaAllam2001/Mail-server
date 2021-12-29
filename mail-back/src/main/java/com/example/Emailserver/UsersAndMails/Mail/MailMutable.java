@@ -1,9 +1,10 @@
 package com.example.Emailserver.UsersAndMails.Mail;
 
-import com.example.Emailserver.UsersAndMails.User.IUser;
-
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 public class MailMutable extends Mail {
     public final boolean mutable;
@@ -13,8 +14,8 @@ public class MailMutable extends Mail {
     }
 
     @Override
-    public boolean setPath(String path) {
-        this.path = path;
+    public boolean setID() {
+        this.ID = hashCode();
         return true;
     }
 
@@ -37,8 +38,17 @@ public class MailMutable extends Mail {
     }
 
     @Override
-    public boolean setTime(Date time) {
-        this.time = time;
+    public boolean setCurrTime() {
+        this.time = new Date(System.currentTimeMillis());
+        return true;
+    }
+
+    @Override
+    public boolean setTime(String dateString) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+        sdf.setTimeZone(TimeZone.getTimeZone("CET"));
+        Date date = sdf.parse(dateString);
+        this.time = date;
         return true;
     }
 

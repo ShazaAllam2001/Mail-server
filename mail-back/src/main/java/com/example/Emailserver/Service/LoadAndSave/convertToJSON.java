@@ -5,42 +5,42 @@ import com.example.Emailserver.UsersAndMails.Contact.IContact;
 import com.example.Emailserver.UsersAndMails.Mail.Attachment;
 import com.example.Emailserver.UsersAndMails.Mail.Mail;
 import com.example.Emailserver.UsersAndMails.User.IUser;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.List;
 
 public class convertToJSON {
 
-    public static JSONObject convertUser(IUser user) {
+    public static JSONObject convertUser(IUser user) throws JSONException {
         JSONObject jsonUser = new JSONObject();
         jsonUser.put("userName",user.getUserName());
         jsonUser.put("password",user.getPassword());
         jsonUser.put("email",user.getEmail());
         JSONArray contactsList = new JSONArray();
         for(IContact contact : user.getContacts()) {
-            contactsList.add(convertContact(contact));
+            contactsList.put(convertContact(contact));
         }
         jsonUser.put("path", Constants.DATABASE_PATH + user.getEmail());
         return jsonUser;
     }
 
-    public static JSONObject convertContact(IContact contact) {
+    public static JSONObject convertContact(IContact contact) throws JSONException {
         JSONObject jsonContact = new JSONObject();
         jsonContact.put("name",contact.getName());
         /* get emails list */
         JSONArray emailsList = new JSONArray();
         for(String email : contact.getEmails()) {
-            emailsList.add(email);
+            emailsList.put(email);
         }
         jsonContact.put("mails",emailsList);
         return jsonContact;
     }
 
-    public static JSONObject convertMail(Mail mail) {
+    public static JSONObject convertMail(Mail mail) throws JSONException {
         JSONObject jsonMail= new JSONObject();
         jsonMail.put("id",mail.getID());
-        jsonMail.put("path",mail.getPath());
         jsonMail.put("sender",mail.getSender());
         /* get receivers list */
         JSONArray jsonReceivers = convertReceivers(mail.getReceivers());
@@ -59,18 +59,18 @@ public class convertToJSON {
     public static JSONArray convertReceivers(List<String> receivers) {
         JSONArray receiversList = new JSONArray();
         for(String receiver : receivers) {
-            receiversList.add(receiver);
+            receiversList.put(receiver);
         }
         return receiversList;
     }
 
-    public static JSONArray convertAttachments(List<Attachment> attachments) {
+    public static JSONArray convertAttachments(List<Attachment> attachments) throws JSONException {
         JSONArray attachmentsList = new JSONArray();
         for(Attachment attachment : attachments) {
             JSONObject jsonAttachment= new JSONObject();
             jsonAttachment.put("name",attachment.getName());
             jsonAttachment.put("path",attachment.getPath());
-            attachmentsList.add(jsonAttachment);
+            attachmentsList.put(jsonAttachment);
         }
         return attachmentsList;
     }

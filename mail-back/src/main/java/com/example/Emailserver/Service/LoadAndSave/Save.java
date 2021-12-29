@@ -3,25 +3,38 @@ package com.example.Emailserver.Service.LoadAndSave;
 import com.example.Emailserver.Service.Constants;
 import com.example.Emailserver.UsersAndMails.Mail.Mail;
 import com.example.Emailserver.UsersAndMails.User.IUser;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+import org.everit.json.schema.Schema;
+import org.everit.json.schema.loader.SchemaLoader;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.simple.parser.JSONParser;
 
-import javax.xml.validation.Schema;
+import java.io.FileReader;
 import java.io.FileWriter;
 
 public class Save {
+    Schema userSchema;
+    Schema mailSchema;
 
-    public boolean saveUser(IUser user) {
+    public Save() {
+        this.userSchema = LoadSchema.loadUserSchema();
+        this.mailSchema = LoadSchema.loadMailSchema();
+    }
+
+    public boolean saveUser(IUser user) throws JSONException {
         // convert User object to JSON object
         JSONObject JSONUser;
         JSONUser = convertToJSON.convertUser(user);
         // read users file as JSON Array
-        JSONArray userList = LoadAsJSONArray.loadUsers();
-        // add the new user to the list
-        userList.add(JSONUser);
+        JSONArray userList = LoadJSON.loadUsers();
         try(FileWriter userWriter = new FileWriter(Constants.DATABASE_PATH + "users.json")) {
-            Schema
-            userWriter.write(userList.toJSONString());
+            // validate object to JSON schema
+            userSchema.validate(JSONUser);
+            // add the new user to the list
+            userList.put(JSONUser);
+            // write the new user list
+            userWriter.write(userList.toString());
             userWriter.flush();
             return true;
         } catch(Exception e) {
@@ -30,17 +43,20 @@ public class Save {
         return false;
     }
 
-    public boolean saveEmail(Mail mail, String userEmail, String folder) {
+    public boolean saveEmail(Mail mail, String userEmail, String folder) throws JSONException {
         String filePath = Constants.DATABASE_PATH + userEmail + "//" + folder + ".json";
         // convert Mail object to JSON object
         JSONObject JSONMail;
         JSONMail = convertToJSON.convertMail(mail);
         // read mails file as JSON Array
-        JSONArray mailList = LoadAsJSONArray.loadMails(filePath);
-        // add the new mail to the list
-        mailList.add(JSONMail);
+        JSONArray mailList = LoadJSON.loadMails(filePath);
         try(FileWriter userWriter = new FileWriter(filePath)) {
-            userWriter.write(JSONMail.toJSONString());
+            // validate object to JSON schema
+            mailSchema.validate(JSONMail);
+            // add the new mail to the list
+            mailList.put(JSONMail);
+            // write the new mail list
+            userWriter.write(JSONMail.toString());
             userWriter.flush();
             return true;
         } catch(Exception e) {
@@ -49,7 +65,4 @@ public class Save {
         return false;
     }
 
-    private Schema readSchema() {
-        return null;
-    }
 }

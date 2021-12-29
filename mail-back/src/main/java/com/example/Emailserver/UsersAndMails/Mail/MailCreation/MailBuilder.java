@@ -5,6 +5,7 @@ import com.example.Emailserver.UsersAndMails.Mail.Mail;
 import com.example.Emailserver.UsersAndMails.Mail.Priority;
 import com.example.Emailserver.UsersAndMails.User.IUser;
 
+import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 
@@ -16,58 +17,53 @@ public class MailBuilder {
         this.mail = factory.getMail(mailType);
     }
 
-    public Mail setID(int ID) {
-        if(this.mail.setID(ID))
-            return this.mail;
-        return null;
+    public Mail getMail() {
+        return this.mail;
     }
 
-    public Mail setPath(String path) {
-        if(this.mail.setPath(path))
-            return this.mail;
-        return null;
+    public MailBuilder setID() {
+        this.mail.setID();
+        return this;
     }
 
-    public Mail setSender(IUser sender) {
-        if(this.mail.setSender(sender))
-            return this.mail;
-        return null;
+    public MailBuilder setSender(String sender) {
+        this.mail.setSender(sender);
+        return this;
     }
 
-    public Mail setReceivers(List<IUser> receivers) {
-        if(this.mail.setReceivers(receivers))
-            return this.mail;
-        return null;
+    public MailBuilder setReceivers(List<String> receivers) {
+        this.mail.setReceivers(receivers);
+        return this;
     }
 
-    public Mail setSubject(String subject) {
-        if(this.mail.setSubject(subject))
-            return this.mail;
-        return null;
+    public MailBuilder setSubject(String subject) {
+        this.mail.setSubject(subject);
+        return this;
     }
 
-    public Mail setTime(Date time) {
-        if(this.mail.setTime(time))
-            return this.mail;
-        return null;
+    public MailBuilder setCurrTime() {
+        this.mail.setCurrTime();
+        return this;
     }
 
-    public Mail setPriority(Priority priority) {
-        if(this.mail.setPriority(priority))
-            return this.mail;
-        return null;
+    public MailBuilder setTime(String dateString) throws ParseException {
+        this.mail.setTime(dateString);
+        return this;
     }
 
-    public Mail setBody(String body) {
-        if(this.mail.setBody(body))
-            return this.mail;
-        return null;
+    public MailBuilder setPriority(Priority priority) {
+        this.mail.setPriority(priority);
+        return this;
     }
 
-    public Mail setAttaches(List<Attachment> attaches) {
-        if(this.mail.setAttaches(attaches))
-            return this.mail;
-        return null;
+    public MailBuilder setBody(String body) {
+        this.mail.setBody(body);
+        return this;
+    }
+
+    public MailBuilder setAttaches(List<Attachment> attaches) {
+        this.mail.setAttaches(attaches);
+        return this;
     }
 
 }
