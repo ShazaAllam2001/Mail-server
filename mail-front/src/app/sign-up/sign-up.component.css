@@ -1,40 +1,45 @@
 .website-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-family: 'Lucida Handwriting', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
-  font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Lucida Handwriting', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size: 60px;
 }
+
 .website-subtitle {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 18px;
-  color: white;
-  padding-left: 90px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    color: white;
+    padding-left: 90px;
 }
+
 .input-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 380px;
-  background-color: white;
-  border: 5px solid gray;
-  border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 360px;
+    background-color: white;
+    border: 5px solid gray;
+    border-radius: 10px;
 }
+
 .sign-up-title {
-  color: grey;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  margin-top: 25px;
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-top: 25px;
 }
+
 .input-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 170px;
 }
+
 .sign-up {
-  margin-bottom: 25px;
+    margin-bottom: 25px;
 }

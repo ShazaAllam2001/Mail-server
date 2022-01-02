@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { SidebarModule } from 'ng-sidebar';
+
 import { AppComponent } from './app.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
@@ -11,6 +12,7 @@ import { InboxComponent } from './inbox/inbox.component';
 import { ToolBarComponent } from './tool-bar/tool-bar.component';
 import { FolderToolBarComponent } from './folder-tool-bar/folder-tool-bar.component';
 import { FolderComponent } from './folder/folder.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { FolderComponent } from './folder/folder.component';
     InboxComponent,
     ToolBarComponent,
     FolderToolBarComponent,
-    FolderComponent
+    FolderComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SidebarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

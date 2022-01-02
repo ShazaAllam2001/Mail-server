@@ -1,0 +1,28 @@
+<div>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <ng-sidebar-container>
+        <ng-sidebar [opened]="opened">
+            <button (click)="toggleSideBar()">
+                Close
+            </button>
+            <h1> @Email.com </h1>
+            <ul>
+                <li>
+                    <button (click)="inbox()"> Inbox </button>
+                </li>
+                <li>
+                    <button (click)="inbox()"> Inbox </button>
+                </li>
+            </ul>
+        </ng-sidebar>
+        <div ng-sidebar-content>
+            <button class="user-folder" (click)="toggleSideBar()">
+                <i class="material-icons" style="background-color:white; color:black; font-size: 36px;">
+                   dehaze
+                </i>
+            </button>
+            <router-outlet></router-outlet>
+        </div>
+    </ng-sidebar-container>
+</div>
