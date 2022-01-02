@@ -1,6 +1,6 @@
-<div id="inbox">
+<div id="folder">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <app-tool-bar></app-tool-bar>
+    <app-contact-tool-bar></app-contact-tool-bar>
 
     <div class="btn-group" role="group">
         <button class="btn-light">
@@ -19,13 +19,6 @@
         </button>
     </div>
 
-    <div class="btn-group" role="group">
-        <button class="block-button-dark" style="width: 150px; height: 30px;">
-          move to folder:
-        </button>
-        <input type="search" class="input-field" id="folder" placeholder="folder name..." />
-    </div>
-
     <div>
         <table class="mail-table">
             <thead>
@@ -36,9 +29,7 @@
                 <i class="form-icon"></i>
               </label>
                     </th>
-                    <th scope="col">Subject</th>
-                    <th scope="col">Sender</th>
-                    <th scope="col">Date</th>
+                    <th scope="col">Contact Name</th>
                 </tr>
             </thead>
             <tbody>
@@ -48,8 +39,6 @@
                           <input type="checkbox" :value="i.date" v-model="selected" />
                         </label>
                     </td>
-                    <td></td>
-                    <td></td>
                     <td></td>
                 </tr>
             </tbody>

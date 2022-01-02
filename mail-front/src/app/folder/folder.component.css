@@ -1,0 +1,67 @@
+#folder {
+    background-color: white;
+    padding: 10px;
+    height: 550px;
+}
+
+.btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.btn-light {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+    background-color: #dcdcdc;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    margin: 5px 10px;
+    width: 110px;
+    height: 32px;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.btn-light:active {
+    transform: translateY(1px);
+    outline: none;
+}
+
+#folder-name {
+    margin-left: 10px;
+    width: 250px;
+    font-size: 18px;
+}
+
+.mail-table {
+    margin: 15px;
+    width: 98%;
+}
+
+.mail-table th {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.mail-table td {
+    background-color: white;
+    color: black;
+    font-size: 20px;
+}
+
+.mail-table tr {
+    border: none;
+    border-bottom: 1px solid black;
+    height: 15px;
+}
+
+.mail-table tr:hover td {
+    background-color: whitesmoke;
+}

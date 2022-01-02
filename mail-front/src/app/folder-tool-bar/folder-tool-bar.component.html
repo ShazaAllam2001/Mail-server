@@ -1,1 +1,75 @@
-<p>folder-tool-bar works!</p>
+<div id="folder-tool-bar">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <div class="content" style="width: 200px;">
+        <div class="dropdown">
+            <button class="dropbtn">
+              <i class="material-icons" style="font-size: 36px; margin-right: 5px;">
+                  sort
+              </i>
+              Sort
+            </button>
+            <div class="dropdown-content">
+                <a href="#">sender</a>
+                <a href="#">reciever</a>
+                <a href="#">subject</a>
+                <a href="#">importance</a>
+                <a href="#">body</a>
+                <a href="#">date</a>
+                <a href="#">attachment</a>
+            </div>
+        </div>
+
+        <div class="order">
+            <button class="order-btn">
+                <i class="material-icons" style="font-size: 24px;">
+                    arrow_upward
+                </i>
+            </button>
+            <button class="order-btn">
+                <i class="material-icons" style="font-size: 24px;">
+                    arrow_downward
+                </i>
+            </button>
+        </div>
+    </div>
+
+    <div class="content" style="width: 380px;">
+        <div class="dropdown">
+            <button class="dropbtn">
+              <i class="material-icons" style="font-size: 36px; margin-right: 5px;">
+                  filter_list
+              </i>
+              Filter
+          </button>
+            <div class="dropdown-content">
+                <a href="#">sender</a>
+                <a href="#">reciever</a>
+                <a href="#">subject</a>
+                <a href="#">importance</a>
+            </div>
+        </div>
+        <input type="search" class="input-field" id="filter-input" placeholder="filter..." />
+    </div>
+
+    <div class="content" style="width: 380px;">
+        <div class="dropdown">
+            <button class="dropbtn" style="padding-left: 6px;">
+              <i class="material-icons" style="font-size: 36px; margin-right: 3px;">
+                  search
+              </i>
+              Search
+            </button>
+            <div class="dropdown-content">
+                <a href="#">sender</a>
+                <a href="#">reciever</a>
+                <a href="#">subject</a>
+                <a href="#">importance</a>
+                <a href="#">date</a>
+                <a href="#">body</a>
+                <a href="#">attachment</a>
+            </div>
+        </div>
+        <input type="search" class="input-field" id="search-input" placeholder="search..." />
+    </div>
+</div>

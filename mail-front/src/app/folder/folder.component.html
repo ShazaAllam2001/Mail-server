@@ -1,1 +1,59 @@
-<p>folder works!</p>
+<div id="folder">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <app-folder-tool-bar></app-folder-tool-bar>
+
+    <div class="btn-group" role="group">
+        <button class="btn-light">
+          <i class="material-icons" style="background-color:#dcdcdc; color:black; font-size: 24px;">
+            west
+          </i>
+          Previous
+        </button>
+        <button class="btn-light">Delete</button>
+        <button class="btn-light">Cancel</button>
+        <button class="btn-light">
+          Next
+          <i class="material-icons" style="background-color:#dcdcdc; color:black">
+            east
+          </i>
+        </button>
+    </div>
+
+    <div class="btn-group" role="group">
+        <button class="block-button-dark" style="width: 150px; height: 30px;">
+          move to folder:
+        </button>
+        <input type="search" class="input-field" id="folder-name" placeholder="folder name..." />
+    </div>
+
+    <div>
+        <table class="mail-table">
+            <thead>
+                <tr>
+                    <th>
+                        <label class="form-checkbox">
+                <input type="checkbox" v-model="selectAll"/>
+                <i class="form-icon"></i>
+              </label>
+                    </th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Sender</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="i in users" :key="i.page">
+                    <td>
+                        <label class="form-checkbox">
+                          <input type="checkbox" :value="i.date" v-model="selected" />
+                        </label>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

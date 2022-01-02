@@ -1,0 +1,71 @@
+<div id="contact-tool-bar">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <div class="content" style="width: 200px;">
+        <button class="dark-btn">
+            <i class="material-icons" style="font-size: 36px; margin-right: 5px;">
+                sort
+            </i>
+            Sort
+        </button>
+
+        <div class="order">
+            <button class="order-btn">
+                <i class="material-icons" style="font-size: 24px;">
+                    arrow_upward
+                </i>
+            </button>
+            <button class="order-btn">
+                <i class="material-icons" style="font-size: 24px;">
+                    arrow_downward
+                </i>
+            </button>
+        </div>
+    </div>
+
+
+    <div class="content">
+        <button class="btn-light" id="add" (click)="showWindow = true">
+            <i class="material-icons">
+              add
+            </i>
+            Add Contact
+        </button>
+
+        <button class="btn-light" id="delete" (click)="deleteContact()">
+            <i class="material-icons">
+              delete
+            </i>
+            Delete Contact
+        </button>
+    </div>
+
+    <div class="content" style="width: 380px;">
+        <button class="dark-btn" style="padding-left: 6px;">
+            <i class="material-icons" style="font-size: 36px; margin-right: 3px;">
+                search
+            </i>
+            Search
+        </button>
+        <input type="search" class="input-field" id="search-input" placeholder="search..." />
+    </div>
+</div>
+
+<div id="addcontact" class="bgmodal" *ngIf="showWindow">
+    <div class="modal-content">
+        <button class="close" (click)="showWindow = false">
+            <i class="material-icons" style="background-color:white; color:black; font-size: 24px;">
+                close
+            </i>
+        </button>
+        <p class="title"> Add new Contact </p>
+        <form>
+            <i class="material-icons" style="background-color:white; color:black">
+                person
+            </i>
+            <input type="text" class="input-field" placeholder="Contact name" name="cname" id="name" required />
+            <br /><br />
+            <input type="button" class="block-button-dark small-btn" value="Done" (click)="addContact()" />
+        </form>
+    </div>
+</div>
