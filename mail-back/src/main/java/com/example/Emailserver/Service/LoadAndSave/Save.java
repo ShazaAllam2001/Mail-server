@@ -8,7 +8,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 
 public class Save {
     Schema userSchema;
@@ -28,6 +30,8 @@ public class Save {
         try(FileWriter userWriter = new FileWriter(Constants.ACCOUNTS_JSON_PATH)) {
             // validate object to JSON schema
             userSchema.validate(JSONUser);
+            // make user directory
+            makeDirectory(user.getEmail());
             // add the new user to the list
             userList.put(JSONUser);
             // write the new user list
@@ -60,6 +64,35 @@ public class Save {
             e.printStackTrace();
         }
         return false;
+    }
+
+    public static void makeDirectory(String email) throws IOException {
+        String dirPath = Constants.DATABASE_PATH + email;
+        File dir = new File(dirPath);
+        dir.mkdir();
+        File sent = new File(dirPath + "\\sent.json");
+        sent.createNewFile();
+        intialFiles(sent);
+        File inbox = new File(dirPath + "\\inbox.json");
+        inbox.createNewFile();
+        intialFiles(inbox);
+        File trash = new File(dirPath + "\\trash.json");
+        trash.createNewFile();
+        intialFiles(trash);
+        File draft = new File(dirPath + "\\draft.json");
+        draft.createNewFile();
+        intialFiles(draft);
+    }
+
+    public static void intialFiles(File file) {
+        JSONArray JSONMail = new JSONArray();
+        try(FileWriter userWriter = new FileWriter(file)) {
+            // write an empty mail list
+            userWriter.write(JSONMail.toString());
+            userWriter.flush();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

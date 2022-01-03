@@ -41,8 +41,8 @@ public class Load {
         // convert json object to java object
         if(obj != null) {
             IUser currentUser = new User(obj.getString("userName"),
-                    obj.getString("password"),
-                    obj.getString("email"));
+                    obj.getString("email"),
+                    obj.getString("password"));
             JSONArray contacts = obj.getJSONArray("contacts");
             currentUser.setContacts(gson.fromJson(contacts.toString(),contactType));
             return currentUser;
@@ -71,15 +71,17 @@ public class Load {
     }
 
     public List<Mail> loadUserMails(String userEmail, String folder) {
-        String filePath = Constants.DATABASE_PATH + userEmail + "//" + folder + ".json";
+        String filePath = Constants.DATABASE_PATH + userEmail + "\\" + folder + ".json";
         JSONArray mailsList = LoadJSON.loadMails(filePath);
         List<Mail> mails = new LinkedList<>();
-        for(int i=0; i<mailsList.length(); i++) {
-            try {
-                JSONObject obj = (JSONObject) mailsList.get(i);
-                mails.add(JSONToMail(folder,obj));
-            } catch(Exception e) {
-                e.printStackTrace();
+        if(mailsList != null) {
+            for(int i=0; i<mailsList.length(); i++) {
+                try {
+                    JSONObject obj = (JSONObject) mailsList.get(i);
+                    mails.add(JSONToMail(folder,obj));
+                } catch(Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
         return null;

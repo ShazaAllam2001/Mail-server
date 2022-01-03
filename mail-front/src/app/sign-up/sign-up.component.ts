@@ -13,7 +13,7 @@ export class SignUpComponent implements OnInit {
   password: string = "";
   email: string = "";
 
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -29,6 +29,11 @@ export class SignUpComponent implements OnInit {
     var url =  this.URL+'/signUp/' + this.username + '/' + this.email + '/' + this.password;
     this.http.get(url).subscribe(response=>{
       console.log(response);
+      if(response) {
+        this.router.navigate(['/Folder']);
+      } else {
+        alert("This email already exists!");
+      } 
     });
   }
 }

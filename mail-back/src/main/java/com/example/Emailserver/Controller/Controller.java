@@ -24,8 +24,8 @@ public class Controller {
     Server server = Server.getServer(); //Server to get and send data
 
     @GetMapping("/signIn/{email}/{password}")
-    public boolean signIn(@PathVariable("email") String email,
-                         @RequestParam("password") String password) throws JSONException, IOException, ParseException, java.text.ParseException {
+    public String signIn(@PathVariable("email") String email,
+                         @PathVariable("password") String password) throws JSONException, IOException, ParseException, java.text.ParseException {
         System.out.println("Sign in" + "\nEmail: " + email + "\nPassword: " + password);
         return server.signIn(email, password);
     }
@@ -38,20 +38,14 @@ public class Controller {
         return server.signUp(userName, email, password);
     }
 
+    @PostMapping("/compose")
+    public boolean compose(@RequestBody JSONObject message) throws IOException, java.text.ParseException {
+        return server.createMessage(message);
+    }
+
     @GetMapping("/getUserUsername")
     public String getUsername() {
         return server.getUserName();
-    }
-
-    //send
-    @PostMapping("/compose")
-    public boolean compose(@RequestBody JSONObject email) {
-        try {
-            return server.createMail(email);
-        } catch (Exception e){
-            e.printStackTrace();
-            return false;
-        }
     }
 
    // delete

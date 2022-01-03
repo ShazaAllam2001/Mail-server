@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-sign-in',
@@ -7,12 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
-  URL: string = "http://localhost:8081";
+  URL: string = "http://localhost:8081/api";
   username: string = "";
   password: string = "";
   email: string = "";
 
-  constructor(private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -26,25 +27,19 @@ export class SignInComponent implements OnInit {
     this.email = emailElement.value;
     var passwordElement = document.getElementById("passwordst") as HTMLInputElement;
     this.password = passwordElement.value;
-    fetch(
-      this.URL+"/signIn/" + this.email + "/" + this.password
-    )
-      .then((Response) => {
-        return Response.json();
-      })
-      .then((data) => {
-        if (data) {
-          this.username = data.username;
-          this.password = data.password;
-          this.email = data.name;
-          //this.router.push("/Inbox").catch(() => {});
-          fetch(this.URL+"/getAccount")
-            .then((Response) => {
-              return Response.json();
-            })
-        } else {
-          alert("error");
-        }
-      });
+
+    var url =  this.URL+'/signIn/' + this.email + '/' + this.password;
+    this.http.get(url,{
+      responseType: 'text'
+    }).subscribe(response=>{
+      console.log(response);
+      if(response=='success') {
+        this.router.navigate(['/Folder']);
+      } else if(response=='mismatch') {
+        alert("Email and password are mismatched");
+      } else if(response=='notFound') {
+        alert("This email does not exist");
+      }
+    });
   }
 }
