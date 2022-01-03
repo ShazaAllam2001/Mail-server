@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { SidebarModule } from 'ng-sidebar';
 import { NgxPaginationModule } from 'ngx-pagination'; 
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
@@ -32,7 +33,8 @@ import { ContactToolBarComponent } from './contact-tool-bar/contact-tool-bar.com
     BrowserModule,
     AppRoutingModule,
     SidebarModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

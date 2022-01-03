@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-sign-up',
@@ -7,12 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-  URL: string = "http://localhost:8081";
+  URL: string = "http://localhost:8081/api";
   username: string = "";
   password: string = "";
   email: string = "";
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -24,31 +25,10 @@ export class SignUpComponent implements OnInit {
     this.email = emailElement.value;
     var passwordElement = document.getElementById("passwordst") as HTMLInputElement;
     this.password = passwordElement.value;
-    fetch(
-      this.URL+'/signUp/' +
-        this.username +
-        "/" +
-        this.email +
-        "/" +
-        this.password
-    )
-      .then((Response) => {
-        return Response.json();
-      })
-      .then((data) => {
-        if (data) {
-          console.log(data);
-          fetch(this.URL +"/getAccount")
-            .then((Response) => {
-              return Response.json();
-            })
-            .then((data) => {
-              console.log(data);
-              this.router.navigate(["/"]).catch(() => {});
-            });
-        } else {
-          alert("error");
-        }
-      });
+
+    var url =  this.URL+'/signUp/' + this.username + '/' + this.email + '/' + this.password;
+    this.http.get(url).subscribe(response=>{
+      console.log(response);
+    });
   }
 }

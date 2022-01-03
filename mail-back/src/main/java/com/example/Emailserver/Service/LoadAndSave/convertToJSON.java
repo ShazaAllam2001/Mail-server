@@ -19,8 +19,10 @@ public class convertToJSON {
         jsonUser.put("password",user.getPassword());
         jsonUser.put("email",user.getEmail());
         JSONArray contactsList = new JSONArray();
-        for(IContact contact : user.getContacts()) {
-            contactsList.put(convertContact(contact));
+        if(user.getContacts() != null) {
+            for(IContact contact : user.getContacts()) {
+                contactsList.put(convertContact(contact));
+            }
         }
         jsonUser.put("path", Constants.DATABASE_PATH + user.getEmail());
         return jsonUser;

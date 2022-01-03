@@ -5,10 +5,6 @@ import com.example.Emailserver.UsersAndMails.Contact.IContact;
 import com.example.Emailserver.UsersAndMails.Mail.Attachment;
 import com.example.Emailserver.UsersAndMails.Mail.Mail;
 import com.example.Emailserver.UsersAndMails.Mail.MailCreation.MailBuilder;
-import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Draft;
-import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Inbox;
-import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Sent;
-import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Trash;
 import com.example.Emailserver.UsersAndMails.Mail.Priority;
 import com.example.Emailserver.UsersAndMails.User.IUser;
 import com.example.Emailserver.UsersAndMails.User.User;
@@ -43,27 +39,32 @@ public class Load {
 
     public IUser JSONToUser(JSONObject obj) throws JSONException {
         // convert json object to java object
-        IUser currentUser = new User(obj.getString("userName"),
-                                     obj.getString("password"),
-                                     obj.getString("email"));
-        JSONArray contacts = obj.getJSONArray("contacts");
-        currentUser.setContacts(gson.fromJson(contacts.toString(),contactType));
-        return currentUser;
+        if(obj != null) {
+            IUser currentUser = new User(obj.getString("userName"),
+                    obj.getString("password"),
+                    obj.getString("email"));
+            JSONArray contacts = obj.getJSONArray("contacts");
+            currentUser.setContacts(gson.fromJson(contacts.toString(),contactType));
+            return currentUser;
+        }
+        return null;
     }
 
     private JSONObject getUser(String userEmail) {
         // load all users
         JSONArray usersList = LoadJSON.loadUsers();
         // search for a user with a specific email
-        for(int i=0; i<usersList.length(); i++) {
-            JSONObject obj;
-            try {
-                obj = (JSONObject) usersList.get(i);
-                if(obj.getString("email").equals(userEmail)) {
-                    return obj;
+        if(usersList != null) {
+            for(int i=0; i<usersList.length(); i++) {
+                JSONObject obj;
+                try {
+                    obj = (JSONObject) usersList.get(i);
+                    if(obj.getString("email").equals(userEmail)) {
+                        return obj;
+                    }
+                } catch(Exception e) {
+                    e.printStackTrace();
                 }
-            } catch(Exception e) {
-                e.printStackTrace();
             }
         }
         return null;

@@ -16,7 +16,7 @@ public class Proxy {
         load = new Load();
     }
 
-    public IUser logIn() throws JSONException {
+    public IUser ExistOrNot() throws JSONException {
         IUser existUser = load.loadUserData(Email);
         return existUser;
     }

@@ -4,6 +4,7 @@ import com.example.Emailserver.Service.Constants;
 import com.example.Emailserver.UsersAndMails.Contact.IContact;
 import com.example.Emailserver.UsersAndMails.Mail.Mail;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -17,12 +18,12 @@ public class User implements IUser {
     private List<Mail> inbox;
     private List<Mail> draft;
     private List<Mail> trash;
-    private HashMap<String,List<Mail>> custom;
+    private HashMap<String,List<Mail>> custom = new HashMap<>();
 
-    public User(String userName, String password, String email) {
+    public User(String userName, String email, String password) {
         this.userName = userName;
-        this.password = password;
         this.email = email;
+        this.password = password;
     }
 
     public String getUserName() { return userName; }
@@ -47,7 +48,7 @@ public class User implements IUser {
     public void setContacts(List<IContact> contacts) { this.contacts = contacts; }
     public void addContact(IContact contact){
         if(contacts == null)
-            contacts = new LinkedList<>();
+            contacts = new ArrayList<>();
         contacts.add(contact);
     }
     public void removeContact(IContact contact){
