@@ -26,12 +26,12 @@ public  class Constants {
 
     public static final String CONTACTS = "Contacts";
     public static final String ATTACHMENTS = "Attachments";
-    public static final String ATTACHMENTS_SENT = "sent";
-    public static final String ATTACHMENTS_INBOX = "Inbox";
 
     public static final String DATABASE_PATH = "C:\\Users\\Blu-Ray\\Documents\\OOP Assignments\\Mail-server\\mail-back\\src\\main\\java\\com\\example\\Emailserver\\Service\\LoadAndSave\\data\\";
     public static final String SCHEMA_PATH = DATABASE_PATH + "schemas\\";
     public static final String ACCOUNTS_JSON_PATH = DATABASE_PATH +"\\users.json";
+    public static final String USER_SCHEMA_PATH = DATABASE_PATH + "\\userSchema.json";
+    public static final String MAIL_SCHEMA_PATH = DATABASE_PATH + "\\mailSchema.json";
 
     public static final String MESSAGE = "Message";
 

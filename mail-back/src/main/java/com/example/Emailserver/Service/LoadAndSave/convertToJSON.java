@@ -24,7 +24,7 @@ public class convertToJSON {
                 contactsList.put(convertContact(contact));
             }
         }
-        jsonUser.put("path", Constants.DATABASE_PATH + user.getEmail());
+        jsonUser.put("contacts", contactsList);
         return jsonUser;
     }
 

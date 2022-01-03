@@ -10,16 +10,17 @@
             "description": "The user name",
             "type": "string"
         },
-        "password": {
-            "description": "The user password",
-            "type": "string",
-            "minLength": 8
-        },
+        ,
         "email": {
             "description": "The user email",
             "type": "string",
             "format": "idn-email"
         },
+        "password": {
+            "description": "The user password",
+            "type": "string",
+            "minLength": 8
+        }
         "contacts": {
             "description": "The user contacts",
             "type": "array",
@@ -43,7 +44,7 @@
             "uniqueItems": true
         }
     },
-    "required": ["name","password","email"],
+    "required": ["userName","password","email","contacts"],
     "additionalProperties": false
 
 }

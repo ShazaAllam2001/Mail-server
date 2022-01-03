@@ -25,7 +25,7 @@ public class Save {
         JSONUser = convertToJSON.convertUser(user);
         // read users file as JSON Array
         JSONArray userList = LoadJSON.loadUsers();
-        try(FileWriter userWriter = new FileWriter(Constants.DATABASE_PATH + "users.json")) {
+        try(FileWriter userWriter = new FileWriter(Constants.ACCOUNTS_JSON_PATH)) {
             // validate object to JSON schema
             userSchema.validate(JSONUser);
             // add the new user to the list

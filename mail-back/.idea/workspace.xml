@@ -5,41 +5,133 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb537bf8-8a77-4f88-b7dd-6549c16bcc62" name="Changes" comment="add sorting and validation schema">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/Login.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/Proxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/Proxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/SignUp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/Load.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/Load.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_11_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_11_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_11_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_11_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_11_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_11_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_19_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_json_simple_json_simple_1_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_digester_commons_digester_1_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_validator_commons_validator_1_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_18.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_18.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_13_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_13_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_41.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_41.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_18_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_everit_json_org_everit_json_schema_1_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jakarta_el_3_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20160810.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_6_28.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_3_6_28.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_30.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_30.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_4_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_27.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailServerBackEnd.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/LoadJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/LoadJSON.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/LoadSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/LoadSchema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/Save.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/convertToJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/convertToJSON.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/UsersAndMails/Mail/MailMutable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/UsersAndMails/Mail/MailMutable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/UsersAndMails/User/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/UsersAndMails/User/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Server/Constants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Server/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Server/MailserverApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Server/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Attachments.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Draft.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Inbox.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Message.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/MessageBody.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/MessageCreator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/MessageFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Sent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Trash.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/UserClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/data/schemas/userSchema.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/data/schemas/userSchema.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/data/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/LoadAndSave/data/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Constants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Filter/Mail/BodyCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Filter/Mail/BodyCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Filter/Mail/Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Filter/Mail/Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Filter/Mail/DateCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Filter/Mail/DateCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Filter/Mail/PriorityCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Filter/Mail/PriorityCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Filter/Mail/ReceiversCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Filter/Mail/ReceiversCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Filter/Mail/SenderCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Filter/Mail/SenderCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Filter/Mail/SubjectCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Filter/Mail/SubjectCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Filter/SearchContacts.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Filter/SearchContacts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/LoadAndSave/Load$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/LoadAndSave/Load$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/LoadAndSave/Load$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/LoadAndSave/Load$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/LoadAndSave/Load.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/LoadAndSave/Load.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/LoadAndSave/LoadJSON.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/LoadAndSave/LoadJSON.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/LoadAndSave/LoadSchema.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/LoadAndSave/LoadSchema.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/LoadAndSave/Save.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/LoadAndSave/Save.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/LoadAndSave/convertToJSON.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/LoadAndSave/convertToJSON.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Sort/SortContacts.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Sort/SortContacts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Sort/SortMails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Sort/SortMails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Contact/Contact.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Contact/Contact.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Contact/IContact.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Contact/IContact.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Contact/NullContact.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Contact/NullContact.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Mail/Attachment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Mail/Attachment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Mail/Mail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Mail/Mail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Mail/MailCreation/MailBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Mail/MailCreation/MailBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Mail/MailCreation/MailFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Mail/MailCreation/MailFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Mail/MailImmutable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Mail/MailImmutable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Mail/MailMutable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Mail/MailMutable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Mail/Priority.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/Mail/Priority.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/User/IUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/User/IUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/User/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/UsersAndMails/User/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/controller/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/controller/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/controller/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/controller/Proxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/controller/Proxy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/controller/SaveAndLoad.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/controller/SearchingContacts.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/controller/signUp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/controller/signUp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/library/ILinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/library/ILinkedList.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/library/PriorityQueueImplementation$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/library/PriorityQueueImplementation$Node.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/library/PriorityQueueImplementation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/library/PriorityQueueImplementation.class" afterDir="false" />
@@ -52,11 +144,6 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/library/singlyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/library/singlyLinkedList.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/library/stackImplementation$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/library/stackImplementation$Node.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/library/stackImplementation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/library/stackImplementation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/Emailserver/MailserverApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/Emailserver/MailserverApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mail-front/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mail-front/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mail-front/src/app/sign-up/sign-up.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mail-front/src/app/sign-up/sign-up.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../schemas/mailSchema.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../schemas/userSchema.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,9 +177,6 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedIndex" value="1" />
-  </component>
   <component name="ProjectId" id="22otKDfuAjadqP5z7TWgkBrN3WJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -102,8 +186,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/old_mail/gmail" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -117,6 +201,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.Emailserver.Controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.Emailserver.Service.test" />
+      <module name="mailServerBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Emailserver.Service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -151,6 +248,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.MailserverApplication" />
+        <item itemvalue="Application.test (1)" />
         <item itemvalue="Application.test" />
       </list>
     </recent_temporary>
