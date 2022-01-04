@@ -3,16 +3,27 @@
 
     <ng-sidebar-container>
         <ng-sidebar [opened]="opened">
-            <button (click)="toggleSideBar()">
-                Close
+            <button class="close" (click)="toggleSideBar()">
+                <i class="material-icons" style="background-color:#f4f4f4; color:black; font-size:36px;">
+                    chevron_left
+                </i>
             </button>
             <h1> @Email.com </h1>
             <ul>
-                <li>
-                    <button (click)="inbox()"> Inbox </button>
+                <li class="tab" id="compose" (click)="compose('compose')">
+                    <p> Compose </p>
                 </li>
-                <li>
-                    <button (click)="inbox()"> Inbox </button>
+                <li class="tab" id="inbox" (click)="inbox('inbox')">
+                    <p> Inbox </p>
+                </li>
+                <li class="tab" id="sent" (click)="sent('sent')">
+                    <p> Sent </p>
+                </li>
+                <li class="tab" id="draft" (click)="draft('draft')">
+                    <p> Draft </p>
+                </li>
+                <li class="tab" id="trash" (click)="trash('trash')">
+                    <p> Trash </p>
                 </li>
             </ul>
         </ng-sidebar>

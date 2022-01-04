@@ -19,8 +19,7 @@ export class SignInComponent implements OnInit {
   }
 
   signUp(): void {
-    const navigationDetails: string[] = ['/SignUp'];
-    this.router.navigate(navigationDetails);
+    this.router.navigate(['/SignUp']);
   }
   signIn() {
     var emailElement = document.getElementById("emailst") as HTMLInputElement;
@@ -34,7 +33,7 @@ export class SignInComponent implements OnInit {
     }).subscribe(response=>{
       console.log(response);
       if(response=='success') {
-        this.router.navigate(['/Folder']);
+        this.router.navigate(['/Home/Folder']);
       } else if(response=='mismatch') {
         alert("Email and password are mismatched");
       } else if(response=='notFound') {

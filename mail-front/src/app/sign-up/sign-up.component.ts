@@ -30,7 +30,7 @@ export class SignUpComponent implements OnInit {
     this.http.get(url).subscribe(response=>{
       console.log(response);
       if(response) {
-        this.router.navigate(['/Folder']);
+        this.router.navigate(['/Home/Folder']);
       } else {
         alert("This email already exists!");
       } 

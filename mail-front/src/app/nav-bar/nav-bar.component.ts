@@ -12,12 +12,43 @@ export class NavBarComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.inbox('inbox');
+ 
   }
 
   toggleSideBar() {
     this.opened = !this.opened;
   }
-  inbox() {
-    this.router.navigate(['/Inbox']);
+  button_click(btn: HTMLLIElement) {
+    var nav_btns: Array<HTMLLIElement> = Array.from(document.getElementsByTagName("li"));
+    nav_btns.forEach(element => {
+      element.style.backgroundColor = "#f4f4f4";
+    });
+    btn.style.backgroundColor = "#dcdcdc";
+  }
+  compose(btn_id: string) {
+    this.router.navigate(['/Home/Compose']);
+    var btn = document.getElementById(btn_id) as HTMLLIElement;
+    this.button_click(btn);
+  }
+  inbox(btn_id: string) {
+    this.router.navigate(['/Home/Folder']);
+    var btn = document.getElementById(btn_id) as HTMLLIElement;
+    this.button_click(btn);
+  }
+  sent(btn_id: string) {
+    this.router.navigate(['/Home/Folder']);
+    var btn = document.getElementById(btn_id) as HTMLLIElement;
+    this.button_click(btn);
+  }
+  draft(btn_id: string) {
+    this.router.navigate(['/Home/Folder']);
+    var btn = document.getElementById(btn_id) as HTMLLIElement;
+    this.button_click(btn);
+  }
+  trash(btn_id: string) {
+    this.router.navigate(['/Home/Folder']);
+    var btn = document.getElementById(btn_id) as HTMLLIElement;
+    this.button_click(btn);
   }
 }
