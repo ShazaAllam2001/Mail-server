@@ -1,13 +1,11 @@
 export class Mail {
-    folder: string = 'sent';
-    //id: number
-    //sender: string
-    recievers: string[] = [];
+    folder: string = 'Sent';
+    sender: string = '';
+    receivers: string[] = [];
     subject: string = '';
     time: string = '';
     priority: number = 1;
     body: string = '';
-    //attachments: FormData = new FormData();
 
     constructor() { }
 

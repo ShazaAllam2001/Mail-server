@@ -3,26 +3,34 @@
 
     <ng-sidebar-container>
         <ng-sidebar [opened]="opened">
-            <button class="close" (click)="toggleSideBar()">
-                <i class="material-icons" style="background-color:#f4f4f4; color:black; font-size:36px;">
-                    chevron_left
-                </i>
-            </button>
+            <div class="sidebar-btns">
+                <button class="close" (click)="toggleSideBar()">
+                    <i class="material-icons" style="background-color:#f4f4f4; color:black; font-size:36px;">
+                        chevron_left
+                    </i>
+                </button>
+                <button class="sign-out" (click)="signOut()">
+                    Sign out
+                </button>
+            </div>
             <h1> @Email.com </h1>
             <ul>
                 <li class="tab" id="compose" (click)="compose('compose')">
                     <p> Compose </p>
                 </li>
-                <li class="tab" id="inbox" (click)="inbox('inbox')">
+                <li class="tab" id="contacts" (click)="contacts('contacts')">
+                    <p> Contacts </p>
+                </li>
+                <li class="tab" id="inbox" (click)="changeFolder('inbox')">
                     <p> Inbox </p>
                 </li>
-                <li class="tab" id="sent" (click)="sent('sent')">
+                <li class="tab" id="sent" (click)="changeFolder('sent')">
                     <p> Sent </p>
                 </li>
-                <li class="tab" id="draft" (click)="draft('draft')">
+                <li class="tab" id="draft" (click)="changeFolder('draft')">
                     <p> Draft </p>
                 </li>
-                <li class="tab" id="trash" (click)="trash('trash')">
+                <li class="tab" id="trash" (click)="changeFolder('trash')">
                     <p> Trash </p>
                 </li>
             </ul>

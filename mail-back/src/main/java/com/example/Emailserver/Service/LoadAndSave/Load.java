@@ -1,7 +1,7 @@
 package com.example.Emailserver.Service.LoadAndSave;
 
 import com.example.Emailserver.Service.Constants;
-import com.example.Emailserver.UsersAndMails.Contact.IContact;
+import com.example.Emailserver.UsersAndMails.Contact.Contact;
 import com.example.Emailserver.UsersAndMails.Mail.Attachment;
 import com.example.Emailserver.UsersAndMails.Mail.Mail;
 import com.example.Emailserver.UsersAndMails.Mail.MailCreation.MailBuilder;
@@ -23,11 +23,13 @@ public class Load {
     private Gson gson;
     private Type contactType;
     private Type attachmentType;
+    private Type receiverType;
 
     public Load() {
         this.gson = new Gson();
-        this.contactType = new TypeToken<List<IContact>>(){}.getType();
+        this.contactType = new TypeToken<List<Contact>>(){}.getType();
         this.attachmentType = new TypeToken<List<Attachment>>(){}.getType();
+        this.receiverType = new TypeToken<List<String>>(){}.getType();
     }
 
     public IUser loadUserData(String userEmail) throws JSONException {
@@ -50,7 +52,7 @@ public class Load {
         return null;
     }
 
-    private JSONObject getUser(String userEmail) {
+    public JSONObject getUser(String userEmail) {
         // load all users
         JSONArray usersList = LoadJSON.loadUsers();
         // search for a user with a specific email
@@ -71,7 +73,7 @@ public class Load {
     }
 
     public List<Mail> loadUserMails(String userEmail, String folder) {
-        String filePath = Constants.DATABASE_PATH + userEmail + "\\" + folder + ".json";
+        String filePath = Constants.DATABASE_PATH + userEmail + "\\" + folder;
         JSONArray mailsList = LoadJSON.loadMails(filePath);
         List<Mail> mails = new LinkedList<>();
         if(mailsList != null) {
@@ -91,12 +93,11 @@ public class Load {
         // convert JSON object into java object
         MailBuilder mailBuilder = new MailBuilder(folder);
         mailBuilder.setSender(obj.getString("sender"))
-                .setReceivers(gson.fromJson(obj.getJSONArray("receivers").toString(),contactType))
+                .setReceivers(gson.fromJson(obj.getJSONArray("receivers").toString(),receiverType))
                 .setSubject(obj.getString("subject"))
                 .setTime(obj.getString("time"))
                 .setPriority(Priority.values()[obj.getInt("priority")-1])
-                .setBody(obj.getString("body"))
-                .setAttaches(gson.fromJson(obj.getJSONArray("attachments").toString(),attachmentType));
+                .setBody(obj.getString("body"));
         return mailBuilder.getMail();
     }
 }

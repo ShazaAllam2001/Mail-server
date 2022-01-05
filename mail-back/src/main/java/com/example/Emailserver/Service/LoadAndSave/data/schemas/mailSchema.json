@@ -46,24 +46,6 @@
             "description": "The email body",
             "type": "string"
         },
-        "attachments": {
-            "description": "The email attachments",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string"
-                    },
-                    "path": {
-                        "type": "string",
-                        "pattern": "^(.+)\/([^\/]+)$"
-                    }
-                },
-                "additionalProperties": false
-            },
-            "uniqueItems": true
-        },
         "mutable": {
             "description": "Identifies if the email is immutable or still mutable",
             "type": "boolean" 

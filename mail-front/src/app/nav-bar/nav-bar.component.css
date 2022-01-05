@@ -3,6 +3,12 @@ h1 {
     font-size: 30px;
 }
 
+.sidebar-btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .close {
     display: flex;
     justify-content: center;
@@ -17,6 +23,21 @@ h1 {
 .close:hover,
 .close:active {
     background-color: black;
+}
+
+.sign-out {
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 35px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+}
+
+.sign-out:hover,
+.sign-out:active {
+    background-color: grey;
 }
 
 ul {

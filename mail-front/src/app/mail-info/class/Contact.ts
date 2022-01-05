@@ -1,6 +1,5 @@
-export class Contact {
-    name: string = '';
-    emails: string[] = [];
+export interface Contact {
+    name: string;
+    emails: string[] ;
 
-    constructor() { }
 }

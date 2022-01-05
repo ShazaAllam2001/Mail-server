@@ -3,6 +3,7 @@ package com.example.Emailserver.UsersAndMails.User;
 import com.example.Emailserver.Service.Constants;
 import com.example.Emailserver.UsersAndMails.Contact.IContact;
 import com.example.Emailserver.UsersAndMails.Mail.Mail;
+import com.example.Emailserver.UsersAndMails.Mail.MailTypes.Sent;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,10 +15,10 @@ public class User implements IUser {
     private String password;
     private final String email;
     private List<IContact> contacts;
-    private List<Mail> sent;
-    private List<Mail> inbox;
-    private List<Mail> draft;
-    private List<Mail> trash;
+    private List<Mail> sent = new ArrayList<>();
+    private List<Mail> inbox = new ArrayList<>();
+    private List<Mail> draft = new ArrayList<>();
+    private List<Mail> trash = new ArrayList<>();
     private HashMap<String,List<Mail>> custom = new HashMap<>();
 
     public User(String userName, String email, String password) {
@@ -142,13 +143,13 @@ public class User implements IUser {
 
     @Override
     public void addToFolder(String name, Mail mail) {
-        if(name.equals(Constants.SENT)) {
+        if(name.compareToIgnoreCase(Constants.SENT)==0) {
             this.sent.add(mail);
-        } else if(name.equals(Constants.INBOX)) {
+        } else if(name.compareToIgnoreCase(Constants.INBOX)==0) {
             this.inbox.add(mail);
-        } else if(name.equals(Constants.DRAFT)) {
+        } else if(name.compareToIgnoreCase(Constants.DRAFT)==0) {
             this.draft.add(mail);
-        } else if(name.equals(Constants.TRASH)) {
+        } else if(name.compareToIgnoreCase(Constants.TRASH)==0) {
             this.trash.add(mail);
         } else if(this.custom.containsKey(name)) {
             this.custom.get(name).add(mail);

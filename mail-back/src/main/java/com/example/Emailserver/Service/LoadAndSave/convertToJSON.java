@@ -48,12 +48,12 @@ public class convertToJSON {
         JSONArray jsonReceivers = convertReceivers(mail.getReceivers());
         jsonMail.put("receivers",jsonReceivers);
         jsonMail.put("subject",mail.getSubject());
-        jsonMail.put("time",mail.getTime());
+        jsonMail.put("time",mail.getTimeString());
         jsonMail.put("priority",mail.getPriorityLevel());
         jsonMail.put("body",mail.getBody());
         /* get attachments list */
-        JSONArray jsonAttachments = convertAttachments(mail.getAttaches());
-        jsonMail.put("attachments",jsonAttachments);
+        //JSONArray jsonAttachments = convertAttachments(mail.getAttaches());
+        //jsonMail.put("attachments",jsonAttachments);
         jsonMail.put("mutable",mail.isMutable());
         return jsonMail;
     }
@@ -66,7 +66,7 @@ public class convertToJSON {
         return receiversList;
     }
 
-    public static JSONArray convertAttachments(List<Attachment> attachments) throws JSONException {
+    /*public static JSONArray convertAttachments(List<Attachment> attachments) throws JSONException {
         JSONArray attachmentsList = new JSONArray();
         for(Attachment attachment : attachments) {
             JSONObject jsonAttachment= new JSONObject();
@@ -75,7 +75,7 @@ public class convertToJSON {
             attachmentsList.put(jsonAttachment);
         }
         return attachmentsList;
-    }
+    }*/
 
 
 }

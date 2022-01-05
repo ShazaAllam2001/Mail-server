@@ -38,6 +38,13 @@
     font-size: 18px;
 }
 
+.table-entry {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
 .mail-table {
     margin: 15px;
     width: 98%;

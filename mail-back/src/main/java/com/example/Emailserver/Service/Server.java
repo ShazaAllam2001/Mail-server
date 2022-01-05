@@ -3,6 +3,8 @@ package com.example.Emailserver.Service;
 import com.example.Emailserver.Service.Filter.Mail.*;
 import com.example.Emailserver.Service.LoadAndSave.Load;
 import com.example.Emailserver.Service.LoadAndSave.Save;
+import com.example.Emailserver.UsersAndMails.Contact.IContact;
+import com.example.Emailserver.UsersAndMails.Mail.Attachment;
 import com.example.Emailserver.UsersAndMails.Mail.Mail;
 import com.example.Emailserver.UsersAndMails.User.IUser;
 import com.example.Emailserver.UsersAndMails.User.User;
@@ -10,6 +12,7 @@ import com.example.Emailserver.Controller.*;
 import com.example.Emailserver.library.doubleLinkedList;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.web.multipart.MultipartFile;
@@ -26,9 +29,9 @@ import java.util.Locale;
 
 public class Server {
     private IUser user;
+    private MultipartFile[] attachments;
     private final Load load = new Load();
     private final Save save = new Save();
-    private final JSONParser jsonParser = new JSONParser();
     private static final Server server = new Server();
 
     private Server() { }
@@ -36,7 +39,20 @@ public class Server {
         return server;
     }
 
-    public String signIn(String email, String password) throws java.text.ParseException, JSONException {
+    public boolean signUp(String userName, String email, String password) throws JSONException {
+        Proxy signup = new Proxy(email,password);
+        IUser user = signup.ExistOrNot();
+        // check user existence
+        if(user == null) {
+            this.user = new User(userName, email, password);
+            save.saveUser(this.user);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public String signIn(String email, String password) throws java.text.ParseException, JSONException, IOException {
         Proxy login = new Proxy(email,password);
         IUser user = login.ExistOrNot();
         // check user existence
@@ -53,17 +69,9 @@ public class Server {
         }
     }
 
-    public boolean signUp(String userName, String email, String password) throws JSONException {
-        Proxy signup = new Proxy(email,password);
-        IUser user = signup.ExistOrNot();
-        // check user existence
-        if(user == null) {
-            this.user = new User(userName, email, password);
-            save.saveUser(this.user);
-            return true;
-        } else {
-            return false;
-        }
+    public boolean signOut() {
+        user = null;
+        return true;
     }
 
     private void fillCurrentUser(String Email) {
@@ -81,42 +89,48 @@ public class Server {
             this.user.setTrash(trash);
     }
 
-    public void AutoDelete() throws java.text.ParseException {
+    public void AutoDelete() throws java.text.ParseException, IOException {
         if(this.user.getTrash() == null)
             return;
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDateTime now = LocalDateTime.now();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
-        Date secondDate = sdf.parse(dtf.format(now));
-        /*for(int i=0;i<messages.size();i++) {
-             Date firstDate = new SimpleDateFormat("dd/MM/yyyy").parse(messages.get(i).getTime());
+        Date firstDate = new Date();
+        Date secondDate;
+        for(int i=0;i<this.user.getTrash().size();i++) {
+            secondDate = this.user.getTrash().get(i).getTime();
             long diffInMillies = Math.abs(secondDate.getTime() - firstDate.getTime());
-            if(diffInMillies>30) {
-            messages.remove(i);
+            if(diffInMillies > 30) {
+               this.user.getTrash().remove(i);
             }
         }
-        /*save.ClearFileContent(user.getEmail(), Constants.TRASH);
-        for (MessageCreator message : messages) {
-            save.sendMessage(message, Constants.TRASH, user.getEmail());}*/
+        save.ClearFileContent(user.getEmail(), Constants.TRASH);
     }
 
-    public boolean createMessage(JSONObject email) throws IOException, JSONException, java.text.ParseException {
+    public boolean createMessage(JSONObject email) throws JSONException, java.text.ParseException, IOException {
+        String folder = email.getString("folder");
         Load load = new Load();
-        Mail mail = load.JSONToMail(Constants.DRAFT,email);
+        Mail mail = load.JSONToMail(folder,email);
         // save to JSON file
         Save save = new Save();
-        save.saveEmail(mail, mail.getSender(),Constants.DRAFT);
-        // check receivers existence
-        if (!exist_user(mail.getSender())) {
-            return false;
-        } else {
-            this.user.addTrashMail(mail);
-            return true;
+        save.saveEmail(mail, mail.getSender(), folder);
+        saveMultipartFile(mail,folder);
+        this.user.addToFolder(folder, mail);
+        if(mail.getReceivers()!=null && (folder.compareToIgnoreCase(Constants.SENT)==0)) {
+            for(String receiver : mail.getReceivers()) {
+                // check receivers existence
+                if(exist_user(receiver)) {
+                    save.saveEmail(mail, receiver, "Inbox");
+                    saveMultipartFile(mail,"Inbox");
+                }
+            }
         }
+        return true;
+    }
+
+    public void setAttachments(MultipartFile[] attachments) {
+        this.attachments = attachments;
     }
 
     public MultipartFile[] getAttachments() {
-        return null;
+        return attachments;
     }
 
     //function to check user existence
@@ -129,8 +143,11 @@ public class Server {
         return false;
     }
 
+    public List<IContact> getContacts() {
+        return user.getContacts();
+    }
 
-    public void sendToTrash(String folder, int messageID) throws JSONException {
+    public void sendToTrash(String folder, int messageID) throws JSONException, IOException {
         List<Mail> mails = this.user.getFolderMails(folder);
         // search for mail with messageID
         Mail mail = null;
@@ -148,7 +165,7 @@ public class Server {
         this.user.addTrashMail(mail);
     }
 
-    public void restoreFromTrash(int messageID) throws JSONException {
+    public void restoreFromTrash(int messageID) throws JSONException, IOException {
         List<Mail> mails = this.user.getTrash();
         // search for mail with messageID
         Mail mail = null;
@@ -166,19 +183,9 @@ public class Server {
         this.user.addTrashMail(mail);
     }
 
-    public  ArrayList<String> saveMultipartFile(ArrayList<MultipartFile> multipartFiles, String Email,String folder,int messageID) throws IOException {
-        if (multipartFiles == null) { return null; }
-        ArrayList<String>files = new ArrayList<>();
-        String makemessageAttachementsFolder=Constants.DATABASE_PATH+Email+"//"+Constants.ATTACHMENTS +"//"+folder +messageID;//directory
-        File file = new File(makemessageAttachementsFolder);
-        file.mkdir();
-        for(MultipartFile multipartFile : multipartFiles) {
-            String directory= makemessageAttachementsFolder+"//" + multipartFile.getOriginalFilename();
-            //Path path = Path.of(directory);
-           // Files.copy(multipartFile.getInputStream() ,path, StandardCopyOption.REPLACE_EXISTING);
-            files.add(directory);
-        }
-        return files;}
+    public boolean saveMultipartFile(Mail mail, String folder) {
+        return save.saveAttachments(attachments, mail, mail.getSender(), folder);
+    }
 
     public List<Mail> getMails(String type) throws IOException, ParseException {
         return load.loadUserMails(user.getEmail() , type);
@@ -245,18 +252,6 @@ public class Server {
                 break;
         }
         return result;
-    }
-
-    public JSONObject parseJSON(String JSONString) throws ParseException {
-        org.json.simple.JSONObject tempObj = (org.json.simple.JSONObject) this.jsonParser.parse(JSONString);
-        JSONObject jsonObject = new JSONObject(tempObj.toJSONString());
-        return jsonObject;
-    }
-
-    public void fillInfo(JSONObject message) {
-        message.put("sender", this.user.getEmail());
-        
-
     }
 
 }

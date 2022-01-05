@@ -29,17 +29,15 @@ public abstract class Mail {
         return getID() == mail.getID()
                 && isMutable() == mail.isMutable()
                 && getSender().equals(mail.getSender())
-                && Objects.equals(getReceivers(), mail.getReceivers())
                 && Objects.equals(getSubject(), mail.getSubject())
                 && getTime().equals(mail.getTime())
                 && priority == mail.priority
-                && Objects.equals(getBody(), mail.getBody())
-                && Objects.equals(getAttaches(), mail.getAttaches());
+                && Objects.equals(getBody(), mail.getBody());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getSender(), getReceivers(), getSubject(), getTime(), priority, getBody(), getAttaches(), isMutable());
+        return Objects.hash(getSender(), getSubject(), getTime(), priority, getBody(), isMutable());
     }
 
     public int getID() { return ID; }

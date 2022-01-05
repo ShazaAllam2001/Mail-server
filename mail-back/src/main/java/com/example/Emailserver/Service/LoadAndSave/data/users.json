@@ -1,1 +1,1 @@
-[{"password":"123456789","userName":"ahmed","email":"ahmed@hotmail.com","contacts":[]},{"password":"123456789","userName":"shaza","email":"shaza@hotmail.com","contacts":[]}]
+[{"password":"123456789","userName":"ahmed","email":"ahmed@hotmail.com","contacts":[{"name":"Ali Ahmed","emails":["aliAhmed@hotmail.com"]}]},{"password":"1122334455","userName":"shaza","email":"shaza@hotmail.com","contacts":[]}]
