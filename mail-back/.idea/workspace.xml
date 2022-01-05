@@ -6,13 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="cb537bf8-8a77-4f88-b7dd-6549c16bcc62" name="Changes" comment="add sorting and validation schema">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Emailserver/Service/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Emailserver/Service/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mail-front/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../mail-front/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mail-front/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../mail-front/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mail-front/src/app/nav-bar/nav-bar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../mail-front/src/app/nav-bar/nav-bar.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mail-front/src/app/compose/compose.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mail-front/src/app/compose/compose.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mail-front/src/app/nav-bar/nav-bar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../mail-front/src/app/nav-bar/nav-bar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mail-front/src/app/sign-in/sign-in.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../mail-front/src/app/sign-in/sign-in.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mail-front/src/app/sign-up/sign-up.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../mail-front/src/app/sign-up/sign-up.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

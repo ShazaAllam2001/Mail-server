@@ -20,7 +20,7 @@ export class NavBarComponent implements OnInit {
     this.opened = !this.opened;
   }
   button_click(btn: HTMLLIElement) {
-    var nav_btns: Array<HTMLLIElement> = Array.from(document.getElementsByTagName("li"));
+    var nav_btns = Array.from(document.getElementsByTagName("li"));
     nav_btns.forEach(element => {
       element.style.backgroundColor = "#f4f4f4";
     });

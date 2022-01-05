@@ -1,169 +1,122 @@
 <div id="compose">
     <form>
-      <div class="input-item">
-        <label> Subject: </label>
-        <input type="text" name="subject" class="input-field" id="subject" />
-      </div>
-      <div class="input-item">
-        <label> Recievers: </label>
-        <input type="text" name="reciever" class="input-field" id="reciever" />
-        <input
-          type="button"
-          id="add-reciever"
-          class="btn"
-          value="Add Reciever"
-        />
-        <input
-          type="button"
-          id="delete-reciever"
-          class="btn"
-          value="Delete Reciever"
-        />
-      </div>
-      
-      <div class="input-item">
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">Recievers</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="input-item">
-        <label> Priority: </label>
-        <div>
-          <input
-            type="radio"
-            id="vehicle1"
-            class="check"
-            name="priority"
-            value="1"
-          />
-          <label for="vehicle1" class="radio-btn"> 1 </label>
-
-          <input
-            type="radio"
-            id="vehicle2"
-            class="check"
-            name="priority"
-            value="2"
-          />
-          <label for="vehicle2" class="radio-btn"> 2 </label>
-
-          <input
-            type="radio"
-            id="vehicle3"
-            class="check"
-            name="priority"
-            value="3"
-          />
-          <label for="vehicle3" class="radio-btn"> 3 </label>
-
-          <input
-            type="radio"
-            id="vehicle4"
-            class="check"
-            name="priority"
-            value="4"
-          />
-          <label for="vehicle4" class="radio-btn"> 4 </label>
-
-          <input
-            type="radio"
-            id="vehicle5"
-            class="check"
-            name="priority"
-            value="5"
-          />
-          <label for="vehicle5" class="radio-btn"> 5 </label>
-
-          <input
-            type="radio"
-            id="vehicle6"
-            class="check"
-            name="priority"
-            value="6"
-          />
-          <label for="vehicle6" class="radio-btn"> 6 </label>
-
-          <input
-            type="radio"
-            id="vehicle7"
-            class="check"
-            name="priority"
-            value="7"
-          />
-          <label for="vehicle7" class="radio-btn"> 7 </label>
-
-          <input
-            type="radio"
-            id="vehicle8"
-            class="check"
-            name="priority"
-            value="8"
-          />
-          <label for="vehicle8" class="radio-btn"> 8 </label>
-
-          <input
-            type="radio"
-            id="vehicle9"
-            class="check"
-            name="priority"
-            value="9"
-          />
-          <label for="vehicle9" class="radio-btn"> 9 </label>
-
-          <input
-            type="radio"
-            id="vehicle10"
-            class="check"
-            name="priority"
-            value="10"
-          />
-          <label for="vehicle10" class="radio-btn"> 10 </label>
+        <div class="input-item">
+            <label> Subject: </label>
+            <input type="text" class="input-field" id="subject" name="subject" />
         </div>
-      </div>
+        <div class="input-item">
+            <label> Recievers: </label>
+            <input type="email" class="input-field" id="receiver" name="receiver" />
+            <input type="button" class="btn" id="add-receiver" value="Add Receivers" (click)="addReceiver()" />
+            <input type="button" class="btn" id="delete-receiver" value="Delete Receivers" (click)="deleteReceivers()" />
+        </div>
 
-      <div class="input-body">
-        <label> Body: </label>
-        <textarea id="body"></textarea>
-      </div>
-      <div class="input-item">
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">Attachments</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-        <label class="btn file">
-          Add Attachment
-          <input type="file" id="add-file" />
-        </label>
-        <input
-          type="button"
-          id="delete-file"
-          class="btn"
-          value="Delete Attachment"
-        />
-      </div>
+        <div class="input-item">
+            <table id="receivers-table">
+                <thead>
+                    <tr>
+                        <th>
+                            <label class="table-entry">
+                              <input type="checkbox"/>
+                            </label>
+                        </th>
+                        <th scope="col"> Recievers </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let receiver of receivers">
+                        <td>
+                            <label class="table-entry">
+                              <input type="checkbox" (change)="checkReceiver($event,receiver)" />
+                            </label>
+                        </td>
+                        <td>
+                            <label class="table-entry">
+                              {{receiver}}
+                            </label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="input-item">
+            <label> Priority: </label>
+            <div>
+                <input type="radio" id="vehicle1" class="check" name="priority" value="1" />
+                <label for="vehicle1" class="radio-btn"> 1 </label>
+
+                <input type="radio" id="vehicle2" class="check" name="priority" value="2" />
+                <label for="vehicle2" class="radio-btn"> 2 </label>
+
+                <input type="radio" id="vehicle3" class="check" name="priority" value="3" />
+                <label for="vehicle3" class="radio-btn"> 3 </label>
+
+                <input type="radio" id="vehicle4" class="check" name="priority" value="4" />
+                <label for="vehicle4" class="radio-btn"> 4 </label>
+
+                <input type="radio" id="vehicle5" class="check" name="priority" value="5" />
+                <label for="vehicle5" class="radio-btn"> 5 </label>
+
+                <input type="radio" id="vehicle6" class="check" name="priority" value="6" />
+                <label for="vehicle6" class="radio-btn"> 6 </label>
+
+                <input type="radio" id="vehicle7" class="check" name="priority" value="7" />
+                <label for="vehicle7" class="radio-btn"> 7 </label>
+
+                <input type="radio" id="vehicle8" class="check" name="priority" value="8" />
+                <label for="vehicle8" class="radio-btn"> 8 </label>
+
+                <input type="radio" id="vehicle9" class="check" name="priority" value="9" />
+                <label for="vehicle9" class="radio-btn"> 9 </label>
+
+                <input type="radio" id="vehicle10" class="check" name="priority" value="10" />
+                <label for="vehicle10" class="radio-btn"> 10 </label>
+            </div>
+        </div>
+
+        <div class="input-body">
+            <label> Body: </label>
+            <textarea id="body"></textarea>
+        </div>
+        <div class="input-item">
+            <table id="attachments-table">
+                <thead>
+                    <tr>
+                        <th>
+                            <label class="table-entry">
+                              <input type="checkbox"/>
+                            </label>
+                        </th>
+                        <th scope="col">Attachments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let file of files">
+                        <td>
+                            <label class="table-entry">
+                              <input type="checkbox" (change)="checkFile($event,file)" />
+                            </label>
+                        </td>
+                        <td>
+                            <label class="table-entry">
+                              {{file.name}}
+                            </label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <label class="btn file">
+              Add Attachment
+              <input type="file" id="add-file" (change)="selectFiles($event)"/>
+            </label>
+            <input type="button" id="delete-file" class="btn" value="Delete Attachment" (click)="deleteFiles()" />
+        </div>
     </form>
 
     <div class="submit">
-      <input type="button" class="block-button-dark" value="Send" id="send" />
-      <input type="button" class="block-button-dark" value="Draft" id="draft" />
+        <input type="button" class="block-button-dark" id="send" value="Send" (click)="send()" />
+        <input type="button" class="block-button-dark" id="draft" value="Draft" (click)="draft()" />
     </div>
-    
+
 </div>

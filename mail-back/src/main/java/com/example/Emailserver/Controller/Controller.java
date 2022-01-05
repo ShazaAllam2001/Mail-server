@@ -8,6 +8,7 @@ import org.json.JSONObject;
 import org.json.simple.parser.ParseException;
 import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,12 +39,24 @@ public class Controller {
         return server.signUp(userName, email, password);
     }
 
+    @PostMapping("/attachments")
+    public boolean attachments(@RequestParam("file") MultipartFile[] files) {
+        /*server.setAttachments(files);
+
+        for(MultipartFile file : server.getAttachments()) {
+            file.getInputStream();
+        }*/
+        return true;
+    }
+
     @PostMapping("/compose")
-    public boolean compose(@RequestBody JSONObject message) throws IOException, java.text.ParseException {
+    public boolean compose(@RequestBody String messageString) throws IOException, java.text.ParseException, ParseException {
+        JSONObject message = server.parseJSON(messageString);
+        server.fillInfo(message);
         return server.createMessage(message);
     }
 
-    @GetMapping("/getUserUsername")
+    @GetMapping("/getUsername")
     public String getUsername() {
         return server.getUserName();
     }
@@ -88,7 +101,7 @@ public class Controller {
 
     //@GetMapping("/addContact")
 
-    //@GetMapping("/addContact")
+    //@GetMapping("/removeContact")
 
 
 }

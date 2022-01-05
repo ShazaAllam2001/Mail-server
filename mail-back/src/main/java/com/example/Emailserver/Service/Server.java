@@ -10,6 +10,7 @@ import com.example.Emailserver.Controller.*;
 import com.example.Emailserver.library.doubleLinkedList;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -27,6 +28,7 @@ public class Server {
     private IUser user;
     private final Load load = new Load();
     private final Save save = new Save();
+    private final JSONParser jsonParser = new JSONParser();
     private static final Server server = new Server();
 
     private Server() { }
@@ -111,6 +113,10 @@ public class Server {
             this.user.addTrashMail(mail);
             return true;
         }
+    }
+
+    public MultipartFile[] getAttachments() {
+        return null;
     }
 
     //function to check user existence
@@ -239,6 +245,18 @@ public class Server {
                 break;
         }
         return result;
+    }
+
+    public JSONObject parseJSON(String JSONString) throws ParseException {
+        org.json.simple.JSONObject tempObj = (org.json.simple.JSONObject) this.jsonParser.parse(JSONString);
+        JSONObject jsonObject = new JSONObject(tempObj.toJSONString());
+        return jsonObject;
+    }
+
+    public void fillInfo(JSONObject message) {
+        message.put("sender", this.user.getEmail());
+        
+
     }
 
 }
